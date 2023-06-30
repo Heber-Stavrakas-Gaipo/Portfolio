@@ -15,13 +15,65 @@ body {
     grid-template-areas: 
     "aside main"
     "footer footer";
-    grid-auto-columns: 25vw 75vw;
+    grid-auto-columns: 1fr 4fr;
 }
 main {
     grid-area: main;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas: 
+    "my-projects my-projects"
+    "project1 project2"
+    "recent-posts recent-posts"
+    "recent-post recent-post";
+    height: min-content;
     gap: .8rem;
+}
+main section {
+    padding: .8em;
+}
+#my-projects {
+    grid-area: my-projects;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#project1 {
+    grid-area: project1;
+}
+#project2 {
+    grid-area: project2;
+}
+#my-projects h2, #my-projects a {
+    justify-content: space-between;
+    margin: .8em;
+}
+.project {
+    display: grid;
+    grid-template-areas: 
+    "img name concept"
+    "dsc dsc dsc";
+    grid-auto-columns: 1fr 10fr 1fr;
+    align-items: center;
+    text-align: justify;
+}
+.project h3 {
+    grid-area: name;
+    margin-left: .25em;
+}
+.project svg {
+    grid-area: img;
+    height: 50%;
+    margin-left: 1em;
+}
+.description {
+    grid-area: dsc;
+    margin: 1em;
+}
+.concept {
+    grid-area: concept;
+    font-size: 65%;
+    margin: 1em;
+    padding-bottom: 1em;
 }
 aside {
     grid-area: aside;
@@ -29,24 +81,6 @@ aside {
     flex-direction: column;
     justify-content: space-between;
     gap: .8rem;
-}
-footer {
-    grid-area: footer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-main, aside {
-    padding: 2rem;
-}
-#my-projects {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-nav, section {
-    background-color: #302F3D;
-    border-radius: 20px;
 }
 #profile {
     padding-top: 2em;
@@ -56,8 +90,8 @@ nav, section {
     justify-content: center;
 }
 aside #profile img {
-    width: 12em;
-    height: 12em;
+    width: 65%;
+    height: 100%;
     border-radius: 100%;
     border: 2px solid #00FF00;
 }
@@ -70,18 +104,18 @@ aside #profile img {
     bottom: 15px;
 }
 #links {
-    display: flex;
-    justify-content: start;
+    justify-content: center;
+    min-width: fit-content;
 }
 a {
     text-decoration: none;
     color: #837E9F;
 }
-ul {
+#links ul, #techs ul {
     margin: 0px;
     padding: 0px;
 }
-li {
+#links li, #techs li {
     list-style-type: none;
 }
 #links ul li {
@@ -89,4 +123,40 @@ li {
     display: flex;
     align-items: center;
     gap: .5em;
+}
+#techs {
+    display: flex;
+    flex-direction: column;
+}
+#techs h2, #experiences h2, #education h2 {
+    margin-left: .8em;
+    /* border: 1px solid; */
+}
+#techs ul {
+    /* border: 1px solid; */
+    margin: .5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+#techs ul li {
+    background-color: #CB92B1;
+    font-weight: bold;
+    color: black;
+    border-radius: 30px;
+    padding: .4em 1rem;
+}
+footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main, aside {
+    padding: 2rem;
+}
+nav, section {
+    background-color: #302F3D;
+    border-radius: 20px;
 }
