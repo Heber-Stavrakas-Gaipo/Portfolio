@@ -52,7 +52,7 @@ main section {
     grid-template-areas: 
     "img name concept"
     "dsc dsc dsc";
-    grid-auto-columns: 1fr 10fr 1fr;
+    grid-auto-columns: 1fr 100fr 1fr;
     align-items: center;
     text-align: justify;
 }
@@ -71,9 +71,10 @@ main section {
 }
 .concept {
     grid-area: concept;
+    position: relative;
+    bottom: 2em;
     font-size: 65%;
     margin: 1em;
-    padding-bottom: 1em;
 }
 aside {
     grid-area: aside;
