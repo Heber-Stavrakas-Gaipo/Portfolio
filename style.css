@@ -16,6 +16,7 @@ body {
     "aside main"
     "footer footer";
     grid-auto-columns: 1fr 4fr;
+    min-width: fit-content;
 }
 main {
     grid-area: main;
