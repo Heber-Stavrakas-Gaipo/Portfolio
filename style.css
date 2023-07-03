@@ -52,7 +52,8 @@ main section {
     display: grid;
     grid-template-areas: 
     "img name concept"
-    "dsc dsc dsc";
+    "dsc dsc dsc"
+    "stars forks language";
     grid-auto-columns: 1fr 100fr 1fr;
     align-items: center;
     text-align: justify;
@@ -60,6 +61,7 @@ main section {
 .project h3 {
     grid-area: name;
     margin-left: .25em;
+    justify-content: start;
 }
 .project svg {
     grid-area: img;
@@ -76,6 +78,38 @@ main section {
     bottom: 2em;
     font-size: 65%;
     margin: 1em;
+}
+.stars {
+    grid-area: stars;
+    display: grid;
+    grid-template-areas: "svg number";
+    margin-left: 1em;
+    align-items: center;
+    justify-content: start;
+}
+.forks {
+    grid-area: forks;
+    display: grid;
+    grid-template-areas: "svg number";
+    margin-left: 1em;
+    align-items: center;
+    justify-content: start;
+}
+.language {
+    display: flex;
+    grid-area: language;
+    margin-right: 1em;
+    justify-content: end;
+}
+.stars svg, .forks svg {
+    grid-area: svg;
+    margin: 0;
+    padding: 0;
+}
+.stars p, .forks p {
+    grid-area: number;
+    margin: 0;
+    padding: 0;
 }
 aside {
     grid-area: aside;
