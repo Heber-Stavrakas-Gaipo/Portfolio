@@ -8,10 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/myfavicon.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./main.js"></script>
 </head>
 <body>
+    <header>
+        <div id="theme-switcher">
+            <label id="switch" class="switch">
+                <input type="checkbox" onchange="toggleTheme()" id="slider">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </header>
     <main>
         <section id="my-projects">
             <h2>Meus projetos</h2>
@@ -37,10 +46,6 @@
     </main>
     <aside>
         <section id="profile">
-            <label id="switch" class="switch">
-                <input type="checkbox" onchange="toggleTheme()" id="slider">
-                <span class="slider round"></span>
-            </label>
             <img id="image" src="https://avatars.githubusercontent.com/u/134441744?v=4" alt="imagem de perfil">
             <h2>Héber Stavrakas Gaipo</h2>
             <p>Estudante de programação</p>
@@ -102,7 +107,9 @@
         </section>
     </aside>
     <footer>
-        <p>Héber Stavrakas Gaipo - 2023</p>
+        <p>Héber Stavrakas Gaipo - <script>let dataAtual = new Date();
+            let anoAtual = dataAtual.getFullYear();
+            document.write(anoAtual)</script></p>
     </footer>
 </body>
 </html>
