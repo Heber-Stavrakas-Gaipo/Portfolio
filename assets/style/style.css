@@ -1,0 +1,399 @@
+.theme-default {
+    --body-bg-color: #22212C;
+    --text-color: #837E9F;
+    --bg-cards: #302F3D;
+    --bg-techs: #CB92B1;
+    --profile: #00FF00;
+}
+
+.theme-light {
+    --body-bg-color: #DDDED3;
+    --text-color: #000000;
+    --bg-cards: #CFD0C2;
+    --bg-techs: #ffffff;
+    --profile: #00FF00;
+}
+
+@keyframes bodyAppear {
+    0% {
+        opacity: 0;
+    }
+
+    ;
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes headerTransition {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 72px;
+    }
+}
+
+@keyframes verticalBar {
+    from {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+body {
+    margin: 0;
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+    font-family: Merriweather Sans;
+    font-weight: 400;
+    font-size: .8em;
+    display: grid;
+    justify-content: space-around;
+    grid-template-areas:
+        "header header"
+        "aside main"
+        "footer footer";
+    grid-auto-columns: 1fr 4fr;
+    min-width: fit-content;
+}
+
+header {
+    grid-area: header;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-cards);
+    align-items: center;
+    box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.25);
+
+    animation-name: headerTransition;
+    animation-duration: .5s;
+}
+
+header a {
+    margin-left: 1em;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    /* font-weight: bold; */
+}
+
+header nav ul a li {
+    font-size: 1rem;
+}
+
+strong {
+    animation: verticalBar .5s infinite;
+}
+
+#theme-switcher, header a div, header nav {
+    animation: bodyAppear 1.5s;
+}
+
+#switch {
+    margin: 1em;
+    padding: 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 17px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--body-bg-color);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: .5s;
+    transition: .5s;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' style='fill: %23f1c40f;transform: ;msFilter:;'%3E%3Cpath d='M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input:checked+.slider {
+    background-color: #2196f3;
+}
+
+/* input:focus+.slider {
+    box-shadow: 0 0 1px #2196f3;
+} */
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+    background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' style='fill: %23f39c12;transform: ;msFilter:;'%3E%3Cpath d='M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 100%;
+}
+
+main, aside {
+    padding: 2rem;
+    animation-name: bodyAppear;
+    animation-duration: 1s;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+        "my-projects my-projects"
+        "project1 project2"
+        "recent-posts recent-posts"
+        "recent-post recent-post";
+    height: min-content;
+    gap: .8rem;
+}
+
+main section {
+    padding: .8em;
+}
+
+#my-projects {
+    grid-area: my-projects;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#project1 {
+    grid-area: project1;
+}
+
+#project2 {
+    grid-area: project2;
+}
+
+#my-projects h2, #my-projects a {
+    justify-content: space-between;
+    margin: .8em;
+}
+
+.project {
+    display: grid;
+    grid-template-areas:
+        "img name concept"
+        "dsc dsc dsc"
+        "stars forks language";
+    grid-auto-columns: 1fr 100fr 1fr;
+    align-items: center;
+    text-align: justify;
+    position: relative;
+}
+
+.project:hover {
+    bottom: 5px;
+    box-shadow: 0px 15px 15px rgb(0, 0, 0, 0.25);
+}
+
+.project h3 {
+    grid-area: name;
+    margin-left: .25em;
+    justify-content: start;
+}
+
+.project svg {
+    grid-area: img;
+    height: 50%;
+    margin-left: 1em;
+}
+
+.description {
+    grid-area: dsc;
+    margin: 1em;
+}
+
+.concept {
+    grid-area: concept;
+    position: relative;
+    bottom: 2em;
+    font-size: 65%;
+    margin: 1em;
+}
+
+.stars {
+    grid-area: stars;
+    display: grid;
+    grid-template-areas: "svg number";
+    margin-left: 1em;
+    align-items: center;
+    justify-content: start;
+}
+
+.forks {
+    grid-area: forks;
+    display: grid;
+    grid-template-areas: "svg number";
+    margin-left: 1em;
+    align-items: center;
+    justify-content: start;
+}
+
+.language {
+    display: flex;
+    grid-area: language;
+    margin-right: 1em;
+    justify-content: end;
+}
+
+.stars svg, .forks svg {
+    grid-area: svg;
+    margin: 0;
+    padding: 0;
+}
+
+.stars p, .forks p {
+    grid-area: number;
+    margin: 0;
+    padding: 0;
+}
+
+aside {
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .8rem;
+}
+
+#profile {
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+aside #profile img {
+    width: 65%;
+    height: 100%;
+    border-radius: 100%;
+    border: 2px solid var(--profile);
+}
+
+#profile h2 {
+    position: relative;
+    top: 10px;
+}
+
+#profile p {
+    position: relative;
+    bottom: 15px;
+}
+
+#links {
+    justify-content: center;
+    min-width: fit-content;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#links ul, #techs ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#links li, #techs li, header li {
+    list-style-type: none;
+}
+
+#links ul li {
+    margin: .8em 1em;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+#techs {
+    display: flex;
+    flex-direction: column;
+}
+
+#techs h2, #experiences h2, #education h2 {
+    margin-left: .8em;
+    /* border: 1px solid; */
+}
+
+#techs ul {
+    /* border: 1px solid; */
+    margin: .5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+#techs ul li {
+    background-color: var(--bg-techs);
+    font-weight: bold;
+    color: black;
+    border-radius: 30px;
+    padding: .4em 1rem;
+}
+
+footer {
+    background-color: var(--bg-cards);
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main nav, aside nav, main section, aside section {
+    background-color: var(--bg-cards);
+    border-radius: 20px;
+}

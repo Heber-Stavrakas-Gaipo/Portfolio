@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../../partials/head'); %>
+    <!-- <link rel="stylesheet" href="/style/style.css" type="text/css"> -->
+</head>
+<body>
+    <%- include('../../partials/header'); %>
+    <main>
+            <section id="my-projects">
+                <h2>Meus projetos</h2>
+                <a target="_blank" href="https://github.com/Heber-Stavrakas-Gaipo?tab=repositories">veja todos</a>
+            </section>
+            <a target="_blank" href="https://github.com/Heber-Stavrakas-Gaipo/Portfolio">
+                <section id="project1" class="project">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-folder">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                    </svg>
+                    <h3 id="project1Name"></h3>
+                    <p id="project1Dsc" class="description"></p>
+                    <p class="concept">metalinguagem</p>
+                    <div class="stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-star">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <p id="project1Stars"></p>
+                    </div>
+                    <div class="forks">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-git-branch">
+                            <line x1="6" y1="3" x2="6" y2="15" />
+                            <circle cx="18" cy="6" r="3" />
+                            <circle cx="6" cy="18" r="3" />
+                            <path d="M18 9a9 9 0 0 1-9 9" />
+                        </svg>
+                        <p id="project1Forks"></p>
+                    </div>
+                    <div class="language">
+                        <p id="project1Language"></p>
+                    </div>
+                </section>
+            </a>
+    </main id="homeMain">
+    <%- include('../../partials/aside'); %>
+    <%- include('../../partials/footer'); %>
+</body>
+
+</html>

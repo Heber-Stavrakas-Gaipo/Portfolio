@@ -7,6 +7,8 @@ This initial project will be used to exercite HTML and CSS principally, as the k
 - CSS
 - JavaScript
     - Axios
+    - Express
+    - Node.js
 
 ## What source do we have:
 - API request
