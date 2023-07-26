@@ -303,7 +303,6 @@ aside {
     grid-area: aside;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: .8rem;
 }
 
@@ -396,4 +395,8 @@ footer {
 main nav, aside nav, main section, aside section {
     background-color: var(--bg-cards);
     border-radius: 20px;
+}
+
+.certificates {
+    background-color: var(--body-bg-color);
 }

@@ -12,11 +12,11 @@ app.get("/", function (req, res) {
     res.render("pages/home/index")
 })
 
-app.get("/about", function (req, res) {
+app.get("/sobre", function (req, res) {
     res.render("pages/about/about")
 })
 
-app.get("/certificates", function (req, res) {
+app.get("/certificados", function (req, res) {
     res.render("pages/certificates/certificates")
 })
 
