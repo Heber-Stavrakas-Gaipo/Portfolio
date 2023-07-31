@@ -1,22 +1,30 @@
 <header>
-    <a href="/">
-        <div>
-            <p> &lt
-                <strong>&#124</strong> &gt
-            </p>
+    <div class="wrapper site-header__wrapper">
+        <a href="/" id="logo">
+            <div>
+                <p>&lt
+                    <strong>&#124</strong> &gt
+                </p>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <a href="/">
+                    <li>Página inicial</li>
+                </a>
+                <a href="/about">
+                    <li>Sobre mim</li>
+                </a>
+                <a href="/certificates">
+                    <li>Certificados</li>
+                </a>
+            </ul>
+        </nav>
+        <div id="theme-switcher">
+            <label id="switch" class="switch" title="Alterar para tema claro">
+                <input type="checkbox" onchange="toggleTheme()" id="slider">
+                <span class="slider round"></span>
+            </label>
         </div>
-    </a>
-    <nav>
-        <ul>
-            <a href="/"><li>Página Inicial</li></a>
-            <a href="/sobre"><li>Sobre mim</li></a>
-            <a href="/certificados"><li>Certificados</li></a>
-        </ul>
-    </nav>
-    <div id="theme-switcher">
-        <label id="switch" class="switch">
-            <input type="checkbox" onchange="toggleTheme()" id="slider">
-            <span class="slider round"></span>
-        </label>
     </div>
 </header>

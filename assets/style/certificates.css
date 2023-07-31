@@ -1,0 +1,78 @@
+.theme-default {
+    --certificate-bg-color: #202024;
+    --card-color: #14182d;
+    --left-box-color: #121214;
+    --letters: white;
+    --path-letters: #E1E1E6;
+    --zoomIn-bg-color: rgba(0, 0, 0, .6);
+}
+
+.theme-light {
+    --certificate-bg-color: #E6E8FA;
+    --card-color: #F5F5FA;
+    --left-box-color: white;
+    --letters: black;
+    --path-letters: #000;
+    --zoomIn-bg-color: rgba(255, 255, 255, .6);
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: .8rem;
+}
+
+main p {
+    font-size: 1rem;
+}
+
+.certificates {
+    display: inline-block;
+    padding: 0;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.certificate:hover {
+    box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.25);
+}
+
+.ampliada {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    background-color: var(--zoomIn-bg-color);
+}
+
+
+.ampliada svg {
+    align-self: center;
+}
+
+/* Botão para fechar a imagem ampliada */
+.fechar-botao {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--letters);
+    background-color: #00000000;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+main section div {
+    background-color: none;
+}

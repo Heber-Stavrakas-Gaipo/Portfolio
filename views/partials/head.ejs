@@ -1,12 +1,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio</title>
+    <!-- <title>Portfólio</title> -->
     <link rel="stylesheet" href="/style/style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
     <link rel="icon" href="icons/myfavicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- <script src="/js/main.js"></script> -->
     <script>
@@ -76,21 +77,26 @@
         // function to toggle between light and dark theme
         function toggleTheme() {
             if (localStorage.getItem('theme') === 'theme-light') {
+                document.querySelector('#switch').setAttribute("title", "Alterar para tema claro")
                 setTheme('theme-default');
             } else {
+                document.querySelector('#switch').setAttribute("title", "Alterar para tema escuro")
                 setTheme('theme-light');
             }
         }
 
         // Immediately invoked function to set the theme on initial load
-        (function () {
-            if (localStorage.getItem('theme') === 'theme-dark') {
-                setTheme('theme-light');
+        document.addEventListener("DOMContentLoaded", function () {
+            if (localStorage.getItem('theme') === 'theme-default') {
+                setTheme('theme-default');
                 document.getElementById('slider').checked = false;
             } else {
-                setTheme('theme-default');
+                setTheme('theme-light');
                 document.getElementById('slider').checked = true;
             }
-        })();
+
+            // Add event listener to the theme switcher button
+            document.querySelector('#switch').addEventListener('click', toggleTheme);
+        });
     </script>
 </head>

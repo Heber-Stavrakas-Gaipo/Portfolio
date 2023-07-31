@@ -3,139 +3,43 @@
 
 <head>
     <%- include('../../partials/head'); %>
-        <style>
-            .theme-default {
-                --certificate-bg-color: #202024;
-                --card-color: #14182d;
-                --left-box-color: #121214;
-                --letters: white;
-                --path-letters: #E1E1E6;
-            }
-
-            .theme-light {
-                --certificate-bg-color: #E6E8FA;
-                --card-color: #F5F5FA;
-                --left-box-color: white;
-                --letters: black;
-                --path-letters: #000;
-            }
-
-            main {
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-                gap: .4rem .2rem;
-            }
-
-            main p {
-                font-size: 1rem;
-            }
-
-            .certificates {
-                display: flex;
-                justify-content: center;
-            }
-
-            .certificate:hover {
-                box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.25);
-            }
-
-            main section div {
-                background-color: none;
-            }
-
-            #button:after,
-            #button2:after,
-            #button3:after {
-                display: flex;
-                content: "\00d7";
-                font-size: 48px;
-                position: absolute;
-                padding: 0;
-                margin: 0;
-                left: calc(100vw - 64px);
-                bottom: calc(100vh - 136px);
-                /* border: 1px solid; */
-                z-index: 9999;
-            }
-        </style>
+        <title>Portfólio: Certificados</title>
+        <link rel="stylesheet" href="/style/certificates.css" type="text/css">
         <script>
-            function zoomIn(id) {
-                const button = document.querySelector('#button')
-                // const pics = [
-                //     document.querySelector('#fundamentar'),
-                //     document.querySelector('#especializar')
-                // ]
-                let pic = document.querySelector(`${id}`);
-                pic.setAttribute('height', 595)
-                pic.setAttribute('width', 842)
-                pic.style.cssText = 'position: absolute;' + 'box-shadow: 0px 0px 0px;'
-                // pics.forEach(element => element.style.cssText = 'visibility: hidden;')
-                button.style.cssText = 'visibility: visible;'
-            }
-            function zoomIn2(id) {
-                const button = document.querySelector('#button2')
-                let pic = document.querySelector(`${id}`);
-                pic.setAttribute('height', 595)
-                pic.setAttribute('width', 842)
-                pic.style.cssText = 'position: absolute;' + 'right: 148.0078125px;' + 'box-shadow: 0px 0px 0px;'
-                button.style.cssText = 'visibility: visible;'
-            }
-            function zoomIn3(id) {
-                const button = document.querySelector('#button3')
-                let pic = document.querySelector(`${id}`);
-                pic.setAttribute('height', 595)
-                pic.setAttribute('width', 842)
-                pic.style.cssText = 'position: absolute;' + 'right: 148.0078125px;' + 'box-shadow: 0px 0px 0px;'
-                button.style.cssText = 'visibility: visible;'
-            }
-            document.onkeydown = function (e) {
-                if (e.key === 'Escape') {
-                    const button = document.querySelector('#button')
-                    let pic = document.querySelector('#conectar');
-                    pic.setAttribute('height', null)
-                    pic.setAttribute('width', null)
-                    pic.style.cssText = 'position: initial;'
-                    button.style.cssText = 'visibility: hidden;'
-                } if (e.key === 'Escape') {
-                    const button = document.querySelector('#button2')
-                    let pic = document.querySelector('#fundamentar');
-                    pic.setAttribute('height', null)
-                    pic.setAttribute('width', null)
-                    pic.style.cssText = 'position: initial;'
-                    button.style.cssText = 'visibility: hidden;'
-                } if (e.key === 'Escape') {
-                    const button = document.querySelector('#button3')
-                    let pic = document.querySelector('#especializar');
-                    pic.setAttribute('height', null)
-                    pic.setAttribute('width', null)
-                    pic.style.cssText = 'position: initial;'
-                    button.style.cssText = 'visibility: hidden;'
-                }
-            }
-            function zoomOut(id) {
-                const button = document.querySelector('#button')
-                let pic = document.querySelector(`${id}`);
-                pic.setAttribute('height', null)
-                pic.setAttribute('width', null)
-                pic.style.cssText = 'position: initial;' + 'border: none;'
-                button.style.cssText = 'visibility: hidden;'
-            }
-            function zoomOut2(id) {
-                const button = document.querySelector('#button2')
-                let pic = document.querySelector(`${id}`);
-                pic.setAttribute('height', null)
-                pic.setAttribute('width', null)
-                pic.style.cssText = 'position: initial;' + 'border: none;'
-                button.style.cssText = 'visibility: hidden;'
-            }
-            function zoomOut3(id) {
-                const button = document.querySelector('#button3')
-                let pic = document.querySelector(`${id}`);
-                pic.setAttribute('height', null)
-                pic.setAttribute('width', null)
-                pic.style.cssText = 'position: initial;' + 'border: none;'
-                button.style.cssText = 'visibility: hidden;'
+            function ampliarImagem(svg) {
+                // Salva a escala original da imagem antes de ampliar
+                svg.originalScale = svg.style.transform;
+
+                // Amplia a imagem
+                svg.classList.add("ampliada");
+                svg.style.transform = "scale(1)";
+                svg.style.cssText = 'box-shadow: 0px 0px 0px;'
+                svg.setAttribute("title", "")
+
+                // Cria um botão para fechar a imagem ampliada
+                var fecharBotao = document.createElement("button");
+                fecharBotao.innerHTML = '<i class="fas fa-times white" title="Fechar certificado"></i>';
+                fecharBotao.classList.add("fechar-botao");
+                fecharBotao.onclick = function () {
+                    // Remove a classe que centraliza a imagem ampliada
+                    svg.classList.remove("ampliada");
+                    // Volta a imagem para a escala original
+                    svg.style.transform = svg.originalScale;
+
+                    // Remove o botão de fechar
+                    document.body.removeChild(fecharBotao);
+                };
+
+                // Adiciona o botão de fechar à página
+                document.body.appendChild(fecharBotao);
+
+                // Adiciona um event listener para detectar quando a tecla Escape for pressionada
+                document.addEventListener("keydown", function (event) {
+                    if (event.key === "Escape") {
+                        // Simula o clique no botão de fechar
+                        fecharBotao.click();
+                    }
+                });
             }
         </script>
 </head>
@@ -143,9 +47,8 @@
 <body>
     <%- include('../../partials/header'); %>
         <main>
-            <section class="certificates">
-                <div id="button" style="visibility: hidden;" onclick="zoomOut('#conectar')"></div>
-                <div onclick="zoomIn('#conectar')" class="c-eWwdBQ">
+            <section class="certificates" title="Abrir certificado">
+                <div onclick="ampliarImagem(this)" class="c-eWwdBQ">
                     <svg id="conectar" class="certificate" width="" height="" viewBox="0 0 842 595" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <rect width="842" height="595" fill="var(--certificate-bg-color)"></rect>
@@ -491,7 +394,7 @@
                             fill="var(--letters) ">Héber Stavrakas Gaipo</text><text x="362" y="230"
                             fill="var(--letters) ">
                             <tspan x="362" y="240">Concluiu com sucesso a trilha Conectar do Discover</tspan>
-                            <tspan x="362" y="260">em 23.07.2023, com carga horária de NaNh. O</tspan>
+                            <tspan x="362" y="260">em 23.07.2023, com carga horária de 4h. O</tspan>
                             <tspan x="362" y="280">currículo de aprendizado inclui: fundamentos da</tspan>
                             <tspan x="362" y="300">programação, funcionamento de computadores,</tspan>
                             <tspan x="362" y="320">internet e mais.</tspan>
@@ -934,10 +837,10 @@
                     </svg>
                 </div>
             </section>
-            <section class="certificates">
-                <div id="button2" style="visibility: hidden;" onclick="zoomOut2('#fundamentar')"></div>
-                <div onclick="zoomIn2('#fundamentar')" class="c-eWwdBQ"><svg id="fundamentar" class="certificate"
-                        width="" height="" viewBox="0 0 842 595" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <section class="certificates" title="Abrir certificado">
+                <div onclick="ampliarImagem(this)" class="c-eWwdBQ">
+                    <svg id="fundamentar" class="certificate" width="" height="" viewBox="0 0 842 595" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <rect width="842" height="595" fill="var(--certificate-bg-color)"></rect>
                         <mask id="mask0_699_9799" maskUnits="userSpaceOnUse" x="24" y="24" width="794" height="547"
                             style="mask-type: alpha;">
@@ -1273,7 +1176,7 @@
                             fill="var(--letters)">
                             <tspan x="362" y="240">Concluiu com sucesso a trilha Fundamentar do</tspan>
                             <tspan x="362" y="260">Discover em 25.07.2023, com carga horária de</tspan>
-                            <tspan x="362" y="280">NaNh. O currículo de aprendizado inclui: HTML,</tspan>
+                            <tspan x="362" y="280">20h. O currículo de aprendizado inclui: HTML,</tspan>
                             <tspan x="362" y="300">CSS, JavaScript, NodeJS, SQL e mais.</tspan>
                         </text>
                         <path
@@ -1711,11 +1614,11 @@
                                 <stop offset="1" stop-color="#4863F7"></stop>
                             </linearGradient>
                         </defs>
-                    </svg></div>
+                    </svg>
+                </div>
             </section>
-            <section class="certificates">
-                <div id="button3" style="visibility: hidden;" onclick="zoomOut3('#especializar')"></div>
-                <div onclick="zoomIn3('#especializar')" class="c-eWwdBQ">
+            <section class="certificates" title="Abrir certificado">
+                <div onclick="ampliarImagem(this)" class="c-eWwdBQ">
                     <svg id="especializar" class="certificate" width="" height="" viewBox="0 0 842 595" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <rect width="842" height="595" fill="var(--certificate-bg-color)"></rect>
@@ -2052,7 +1955,7 @@
                             fill="var(--letters)">Héber Stavrakas Gaipo</text><text x="362" y="230"
                             fill="var(--letters)">
                             <tspan x="362" y="220">Concluiu com sucesso a trilha Especializar do</tspan>
-                            <tspan x="362" y="240">Discover em 29.07.2023, com carga horária de NaNh.</tspan>
+                            <tspan x="362" y="240">Discover em 29.07.2023, com carga horária de 20h.</tspan>
                             <tspan x="362" y="260">O currículo de aprendizado inclui: HTML e</tspan>
                             <tspan x="362" y="280">CSS avançado, e fundamentos básicos de APIs,</tspan>
                             <tspan x="362" y="300">ReactJS, TypeScript, HTML, CSS avançados;</tspan>
