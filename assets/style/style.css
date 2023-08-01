@@ -14,6 +14,19 @@
     --profile: #00FF00;
 }
 
+html ::-webkit-scrollbar {
+    width: 6px;
+}
+
+html ::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background: gray;
+}
+
+html ::-webkit-scrollbar-track {
+    background-image: linear-gradient(to bottom, #302F3D, #22212C, #302F3D);
+}
+
 @keyframes bodyAppear {
     0% {
         opacity: 0;
@@ -50,6 +63,20 @@
     }
 }
 
+@keyframes spin {
+    0% {
+        bottom: 0px;
+    }
+
+    50% {
+        bottom: 5px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
 body {
     margin: 0;
     background-color: var(--body-bg-color);
@@ -65,6 +92,30 @@ body {
         "footer footer";
     grid-auto-columns: 1fr 4fr;
     min-width: fit-content;
+}
+
+.loading-screen {
+    background-color: #202024;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    opacity: 1;
+    /* Inicialmente, a tela de loading é completamente opaca */
+    transition: opacity 0.3s ease;
+    /* Adicionamos uma transição de 0.3 segundos para suavizar o desaparecimento */
+}
+
+.loader {
+    position: relative;
+    font-size: 4em;
+    color: white;
+    animation: spin 1s infinite;
 }
 
 header {
@@ -200,8 +251,8 @@ main {
         "recent-post recent-post";
     height: min-content;
     gap: .8rem;
-    /* animation-name: bodyAppear; */
-    animation-duration: 1s;
+    /* animation-name: bodyAppear;
+    animation-duration: .5s; */
 }
 
 main section {

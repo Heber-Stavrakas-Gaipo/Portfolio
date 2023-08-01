@@ -98,5 +98,16 @@
             // Add event listener to the theme switcher button
             document.querySelector('#switch').addEventListener('click', toggleTheme);
         });
+
+        window.addEventListener("load", function () {
+            // Quando a página estiver completamente carregada, oculta a tela de loading com transição suave
+            const loadingScreen = document.getElementById("loadingScreen");
+            loadingScreen.style.opacity = 0; // Definimos a opacidade para 0 (completamente transparente)
+
+            // Aguarda um pequeno intervalo antes de remover a tela de loading
+            setTimeout(function () {
+                loadingScreen.style.display = "none";
+            }, 300); // A transição tem duração de 0.3 segundos (300 milissegundos)
+        });
     </script>
 </head>
