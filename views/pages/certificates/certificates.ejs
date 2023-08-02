@@ -3,46 +3,42 @@
 
 <head>
     <%- include('../../partials/loading'); %>
-    <%- include('../../partials/head'); %>
-        <title>Portfólio: Certificados</title>
-        <link rel="stylesheet" href="/style/certificates.css" type="text/css">
-        <script>
-            function ampliarImagem(svg) {
-                // Salva a escala original da imagem antes de ampliar
-                svg.originalScale = svg.style.transform;
+        <%- include('../../partials/head'); %>
+            <title>Portfólio: Certificados</title>
+            <link rel="stylesheet" href="/style/certificates.css" type="text/css">
+            <script>
+                function ampliarImagem(svg) {
+                    // Amplia a imagem
+                    svg.classList.add("ampliada");
+                    svg.style.cssText = 'box-shadow: 0px 0px 0px;'
+                    svg.setAttribute("title", "")
 
-                // Amplia a imagem
-                svg.classList.add("ampliada");
-                svg.style.transform = "scale(1)";
-                svg.style.cssText = 'box-shadow: 0px 0px 0px;'
-                svg.setAttribute("title", "")
+                    // Cria um botão para fechar a imagem ampliada
+                    var fecharBotao = document.createElement("button");
+                    fecharBotao.innerHTML = '<i class="fas fa-times white" title="Fechar certificado"></i>';
+                    fecharBotao.classList.add("fechar-botao");
+                    fecharBotao.onclick = function () {
+                        // Remove a classe que centraliza a imagem ampliada
+                        svg.classList.remove("ampliada");
+                        // Volta a imagem para a escala original
+                        svg.style.transform = svg.originalScale;
 
-                // Cria um botão para fechar a imagem ampliada
-                var fecharBotao = document.createElement("button");
-                fecharBotao.innerHTML = '<i class="fas fa-times white" title="Fechar certificado"></i>';
-                fecharBotao.classList.add("fechar-botao");
-                fecharBotao.onclick = function () {
-                    // Remove a classe que centraliza a imagem ampliada
-                    svg.classList.remove("ampliada");
-                    // Volta a imagem para a escala original
-                    svg.style.transform = svg.originalScale;
+                        // Remove o botão de fechar
+                        document.body.removeChild(fecharBotao);
+                    };
 
-                    // Remove o botão de fechar
-                    document.body.removeChild(fecharBotao);
-                };
+                    // Adiciona o botão de fechar à página
+                    document.body.appendChild(fecharBotao);
 
-                // Adiciona o botão de fechar à página
-                document.body.appendChild(fecharBotao);
-
-                // Adiciona um event listener para detectar quando a tecla Escape for pressionada
-                document.addEventListener("keydown", function (event) {
-                    if (event.key === "Escape") {
-                        // Simula o clique no botão de fechar
-                        fecharBotao.click();
-                    }
-                });
-            }
-        </script>
+                    // Adiciona um event listener para detectar quando a tecla Escape for pressionada
+                    document.addEventListener("keydown", function (event) {
+                        if (event.key === "Escape") {
+                            // Simula o clique no botão de fechar
+                            fecharBotao.click();
+                        }
+                    });
+                }
+            </script>
 </head>
 
 <body>

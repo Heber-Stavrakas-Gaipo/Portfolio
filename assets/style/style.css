@@ -77,21 +77,28 @@ html ::-webkit-scrollbar-track {
     }
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
+    padding: 0;
     background-color: var(--body-bg-color);
     color: var(--text-color);
     font-family: Merriweather Sans;
     font-weight: 400;
     font-size: .8em;
     display: grid;
-    justify-content: space-around;
+    justify-content: space-between;
     grid-template-areas:
         "header header"
         "aside main"
         "footer footer";
-    grid-auto-columns: 1fr 4fr;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr auto;
     min-width: fit-content;
+    min-height: 100vh;
 }
 
 .loading-screen {
@@ -121,6 +128,7 @@ body {
 header {
     grid-area: header;
     height: 72px;
+    min-width: 100%;
     background-color: var(--bg-cards);
     box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.25);
     /* animation-name: headerTransition; */
@@ -446,6 +454,7 @@ a {
 footer {
     background-color: var(--bg-cards);
     grid-area: footer;
+    min-width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
