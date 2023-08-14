@@ -17,12 +17,23 @@
 }
 
 main {
+    display: block;
+}
+
+main hr {
+    border-color: var(--body-bg-color);
+}
+
+#rocketseat-section {
+    margin-bottom: .8rem;
+}
+
+#rocketseat-certificates {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: .8rem;
+    justify-content: space-between;
 }
 
 main p {

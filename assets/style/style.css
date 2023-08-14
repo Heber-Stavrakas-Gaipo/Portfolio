@@ -19,12 +19,11 @@ html ::-webkit-scrollbar {
 }
 
 html ::-webkit-scrollbar-thumb {
-    border-radius: 30px;
-    background: gray;
+    background-color: #bfbfbf;
 }
 
 html ::-webkit-scrollbar-track {
-    background-image: linear-gradient(to bottom, #302F3D, #22212C, #302F3D);
+    background-color: #808080;
 }
 
 @keyframes bodyAppear {
