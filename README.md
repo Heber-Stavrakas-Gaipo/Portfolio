@@ -1,8 +1,13 @@
-# Portfolio
+<h1 align="center">Portfolio</h1>
 
-This initial project will be used to exercite HTML and CSS principally, as the knowlegede progresses I will introduce others concepts, technologies and languages.
+<p align="center">Projeto destinado a concentrar e apresentar meus conhecimentos de programação, voltados ao desenvolvimento WEB</p>
 
-## What does this one have now:
+<p align="center">
+  <a href="#tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#projeto">Projeto</a>
+</p>
+
+## Tecnologias:
 - HTML
 - CSS
 - JavaScript
@@ -10,6 +15,7 @@ This initial project will be used to exercite HTML and CSS principally, as the k
     - Express
     - Node.js
 
-## What source do we have:
-- API request
-- Theme switch
+## Projeto
+Esse projeto nasceu com a proposta de aplicar e desenvolver meus conhecimentos em HTML e CSS, para apresentar uma página inicial que servisse como portfólio. Mas decidi reunir aqui conhecimentos mais profundos, tanto HTML e CSS, quanto JavaScript e suas ferramentas.
+
+O site também conta com API requests e um theme switcher.

@@ -97,6 +97,8 @@
     document.querySelector("#switch").addEventListener("click", toggleTheme);
   });
 
+  document.querySelector("body").setAttribute("class", "hide-scrollbar")
+
   window.addEventListener("load", function () {
     // Quando a página estiver completamente carregada, oculta a tela de loading com transição suave
     const loadingScreen = document.getElementById("loadingScreen");
@@ -105,6 +107,9 @@
     // Aguarda um pequeno intervalo antes de remover a tela de loading
     setTimeout(function () {
       loadingScreen.style.display = "none";
-    }, 300); // A transição tem duração de 0.3 segundos (300 milissegundos)
+    }, 0); // A transição tem duração de 0.3 segundos (300 milissegundos)
+
+    // Remove a classe que oculta a scrollbar
+    document.body.classList.remove("hide-scrollbar");
   });
 </script>

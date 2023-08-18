@@ -4,6 +4,7 @@
   --bg-cards: #302f3d;
   --bg-techs: #cb92b1;
   --profile: #00ff00;
+  --scrollbar-thumb: #ddded3;
 }
 
 .theme-light {
@@ -12,6 +13,7 @@
   --bg-cards: #cfd0c2;
   --bg-techs: #ffffff;
   --profile: #00ff00;
+  --scrollbar-thumb: #22212c;
 }
 
 html ::-webkit-scrollbar {
@@ -19,11 +21,11 @@ html ::-webkit-scrollbar {
 }
 
 html ::-webkit-scrollbar-thumb {
-  background-color: #bfbfbf;
+  background-color: var(--scrollbar-thumb);
 }
 
 html ::-webkit-scrollbar-track {
-  background-color: #808080;
+  background: linear-gradient(var(--bg-cards), var(--body-bg-color), var(--bg-cards));
 }
 
 @keyframes bodyAppear {
@@ -60,7 +62,7 @@ html ::-webkit-scrollbar-track {
   }
 }
 
-@keyframes spin {
+@keyframes jump {
   0% {
     bottom: 0px;
   }
@@ -77,6 +79,10 @@ html ::-webkit-scrollbar-track {
 html,
 body {
   height: 100%;
+}
+
+.hide-scrollbar {
+  overflow: hidden;
 }
 
 body {
@@ -120,7 +126,7 @@ body {
   position: relative;
   font-size: 4em;
   color: white;
-  animation: spin 1s infinite;
+  animation: jump 1s infinite;
 }
 
 header {
