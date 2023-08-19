@@ -2,25 +2,42 @@
   const url = "https://api.github.com/users/Heber-Stavrakas-Gaipo";
   const e = (error) => console.error(error);
 
-  function getProjectName() {
+  function displayProjectNames() {
     axios
       .get(`${url}/repos`)
       .then((response) => {
-        project1Name.textContent = response.data[1].name;
+        const projects = response.data;
+        projects.forEach((project, index) => {
+          const projectNameElement = document.querySelector(
+            `#project${index + 1}Name`
+          );
+          if (projectNameElement) {
+            projectNameElement.textContent = project.name;
+          }
+        });
       })
       .catch(e);
   }
-  getProjectName();
 
-  function getDescription() {
+  displayProjectNames();
+
+  function getDescriptions() {
     axios
       .get(`${url}/repos`)
       .then((response) => {
-        project1Dsc.textContent = response.data[1].description;
+        const projects = response.data;
+        projects.forEach((project, index) => {
+          const projectDscElement = document.querySelector(
+            `#project${index + 1}Dsc`
+          );
+          if (projectDscElement) {
+            projectDscElement.textContent = project.description;
+          }
+        });
       })
       .catch(e);
   }
-  getDescription();
+  getDescriptions();
 
   function getGithubUserName() {
     axios
@@ -36,7 +53,15 @@
     axios
       .get(`${url}/repos`)
       .then((response) => {
-        project1Stars.textContent = response.data[1].stargazers_count;
+        const projects = response.data;
+        projects.forEach((project, index) => {
+          const projectStarElement = document.querySelector(
+            `#project${index + 1}Stars`
+          );
+          if (projectStarElement) {
+            projectStarElement.textContent = project.stargazers_count;
+          }
+        });
       })
       .catch(e);
   }
@@ -46,7 +71,15 @@
     axios
       .get(`${url}/repos`)
       .then((response) => {
-        project1Forks.textContent = response.data[1].forks;
+        const projects = response.data;
+        projects.forEach((project, index) => {
+          const projectForkElement = document.querySelector(
+            `#project${index + 1}Forks`
+          );
+          if (projectForkElement) {
+            projectForkElement.textContent = project.forks;
+          }
+        });
       })
       .catch(e);
   }
@@ -56,7 +89,19 @@
     axios
       .get(`${url}/repos`)
       .then((response) => {
-        project1Language.textContent = response.data[1].language;
+        const projects = response.data;
+        projects.forEach((project, index) => {
+          const projectLanguageElement = document.querySelector(
+            `#project${index + 1}Language`
+          );
+
+          if (projectLanguageElement) {
+            projectLanguageElement.textContent = project.language;
+            projectLanguageElement.classList.add(
+              `language-${project.language.toLowerCase()}`
+            );
+          }
+        });
       })
       .catch(e);
   }
@@ -97,7 +142,7 @@
     document.querySelector("#switch").addEventListener("click", toggleTheme);
   });
 
-  document.querySelector("body").setAttribute("class", "hide-scrollbar")
+  document.querySelector("body").setAttribute("class", "hide-scrollbar");
 
   window.addEventListener("load", function () {
     // Quando a página estiver completamente carregada, oculta a tela de loading com transição suave
