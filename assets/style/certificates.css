@@ -33,7 +33,8 @@ main hr {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
+    gap: .8rem;
 }
 
 main p {
@@ -92,4 +93,10 @@ main section div svg {
 
 main section div {
     background-color: none;
+}
+
+@media (max-width: 700px) {
+    #rocketseat-certificates {
+        justify-content: center;
+    }    
 }

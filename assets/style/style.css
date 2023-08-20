@@ -140,7 +140,7 @@ header {
   background-color: var(--bg-cards);
   box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.25);
   /* animation-name: headerTransition; */
-  animation-duration: 0.5s;
+  /* animation-duration: 0.5s; */
 }
 
 .site-header__wrapper {
@@ -502,6 +502,16 @@ aside section {
       "footer";
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr 1fr auto;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .site-header__wrapper {
+    margin: 0;
   }
 
   #logo,
