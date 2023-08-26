@@ -20,6 +20,25 @@
   }
 
   displayProjectNames();
+  
+  function projectLinks() {
+    axios
+      .get(`${url}/repos`)
+      .then((response) => {
+        const projects = response.data;
+        projects.forEach((project, index) => {
+          const projectLinkElement = document.querySelector(
+            `#project${index + 1}Link`
+          );
+          if (projectLinkElement) {
+            projectLinkElement.setAttribute("href", project.html_url);
+          }
+        });
+      })
+      .catch(e);
+  }
+
+  projectLinks();
 
   function getDescriptions() {
     axios

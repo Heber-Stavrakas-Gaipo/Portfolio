@@ -18,6 +18,10 @@
   --slider-bs: black;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 html ::-webkit-scrollbar {
   width: 6px;
 }
@@ -96,7 +100,7 @@ body {
   color: var(--text-color);
   font-family: Merriweather Sans;
   font-weight: 400;
-  font-size: 0.8em;
+  font-size: 1.28em;
   display: grid;
   justify-content: space-between;
   grid-template-areas:
@@ -128,14 +132,14 @@ body {
 
 .loader {
   position: relative;
-  font-size: 4em;
+  font-size: 64px;
   color: white;
   animation: jump 1s infinite;
 }
 
 header {
   grid-area: header;
-  height: 72px;
+  height: 7.2rem;
   min-width: 100%;
   background-color: var(--bg-cards);
   box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.25);
@@ -148,7 +152,7 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
-  max-height: 72px;
+  max-height: 7.2rem;
 }
 
 #logo {
@@ -164,7 +168,7 @@ header {
 header a {
   /* margin-left: 1em; */
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 2.88rem;
 }
 
 header ul {
@@ -178,7 +182,7 @@ header ul {
 }
 
 header nav ul li a {
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
 
 #logo-bar {
@@ -307,8 +311,8 @@ main section {
 }
 
 .project:hover {
-  bottom: 5px;
-  box-shadow: 0px 15px 15px rgb(0, 0, 0, 0.25);
+  bottom: .5rem;
+  box-shadow: 0px 1.5rem 1.5rem rgb(0, 0, 0, 0.25);
 }
 
 .project h3 {
@@ -394,17 +398,17 @@ aside #profile img {
   width: 65%;
   height: 100%;
   border-radius: 100%;
-  border: 2px solid var(--profile);
+  border: .2rem solid var(--profile);
 }
 
 #profile h2 {
   position: relative;
-  top: 10px;
+  top: 1rem;
 }
 
 #profile p {
   position: relative;
-  bottom: 15px;
+  bottom: 1.5rem;
 }
 
 #links {
@@ -486,6 +490,12 @@ aside section {
   background-color: var(--body-bg-color);
 }
 
+@media (max-width: 300px) {
+  header nav ul li a {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 700px) {
   body {
     grid-template-areas:
@@ -505,6 +515,7 @@ aside section {
 
   .site-header__wrapper {
     margin: 0;
+    justify-content: center;
   }
 
   #logo {
@@ -515,9 +526,5 @@ aside section {
   header ul {
     margin-left: 1em;
     gap: 0.8rem;
-  }
-
-  .site-header__wrapper {
-    justify-content: center;
   }
 }
