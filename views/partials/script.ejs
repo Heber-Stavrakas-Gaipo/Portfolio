@@ -195,4 +195,32 @@
       behavior: "smooth",
     });
   });
+
+  // Obtém o elemento <a> de cada link da header
+  const paginaInicialLink = document.getElementById("home");
+  const sobreMimLink = document.getElementById("about");
+  const certificadosLink = document.getElementById("certificates");
+
+  // Obtém o nome da página atual da URL (assumindo que sua URL seja algo como "http://seusite.com/pagina-inicial.html")
+  const paginaAtual = window.location.href.split("/").pop();
+
+  // Função para atualizar as classes com base na página atual
+  function atualizarEstiloDaHeader() {
+    // Remove todas as classes ativas primeiro
+    paginaInicialLink.classList.remove("ativo");
+    sobreMimLink.classList.remove("ativo");
+    certificadosLink.classList.remove("ativo");
+
+    // Adiciona a classe ativa apenas à página correspondente
+    if (paginaAtual === "") {
+      paginaInicialLink.classList.add("ativo");
+    } else if (paginaAtual === "about") {
+      sobreMimLink.classList.add("ativo");
+    } else if (paginaAtual === "certificates") {
+      certificadosLink.classList.add("ativo");
+    }
+  }
+
+  // Chama a função inicialmente para configurar o estilo com base na página atual
+  atualizarEstiloDaHeader();
 </script>

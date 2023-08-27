@@ -157,6 +157,10 @@ header {
   max-height: 7.2rem;
 }
 
+.ativo {
+  text-decoration: underline;
+}
+
 #logo {
   margin: 0 1em;
 }
@@ -169,7 +173,7 @@ header {
 
 header a {
   /* margin-left: 1em; */
-  font-weight: bold;
+  font-weight: 700;
   font-size: 2.88rem;
 }
 
@@ -427,6 +431,10 @@ a {
 #techs ul {
   margin: 0px;
   padding: 0px;
+}
+
+#techs ul {
+  padding-bottom: 1rem;
 }
 
 #links li,
