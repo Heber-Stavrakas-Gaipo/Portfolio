@@ -20,7 +20,7 @@
   }
 
   displayProjectNames();
-  
+
   function projectLinks() {
     axios
       .get(`${url}/repos`)
@@ -175,5 +175,24 @@
 
     // Remove a classe que oculta a scrollbar
     document.body.classList.remove("hide-scrollbar");
+  });
+
+  const scrollButton = document.querySelector(".scroll-to-top");
+
+  // Mostrar a seta quando o usuário rolar a página
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 200) {
+      scrollButton.classList.add("active");
+    } else {
+      scrollButton.classList.remove("active");
+    }
+  });
+
+  // Rolagem suave para o topo quando a seta for clicada
+  scrollButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
 </script>

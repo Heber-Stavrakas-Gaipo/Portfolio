@@ -6,6 +6,7 @@
   --profile: #00ff00;
   --scrollbar-thumb: #ddded3;
   --slider-bs: white;
+  --scroll-text: white;
 }
 
 .theme-light {
@@ -16,6 +17,7 @@
   --profile: #00ff00;
   --scrollbar-thumb: #22212c;
   --slider-bs: black;
+  --scroll-text: black;
 }
 
 html {
@@ -488,6 +490,31 @@ aside section {
 
 .certificates {
   background-color: var(--body-bg-color);
+}
+
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--bg-cards);
+  color: var(--scroll-text);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.scroll-to-top.active {
+  display: block;
+}
+
+.scroll-to-top:hover {
+  box-shadow: 0 0 5px black;
 }
 
 @media (max-width: 300px) {
