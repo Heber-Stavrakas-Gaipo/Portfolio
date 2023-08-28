@@ -462,6 +462,10 @@ header li {
   /* border: 1px solid; */
 }
 
+#education ul {
+  margin-right: 1.28rem;
+}
+
 #techs ul {
   /* border: 1px solid; */
   margin: 0.5rem;

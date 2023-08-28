@@ -183,6 +183,7 @@
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 200) {
       scrollButton.classList.add("active");
+      scrollButton.setAttribute('title', 'Voltar para o topo')
     } else {
       scrollButton.classList.remove("active");
     }
