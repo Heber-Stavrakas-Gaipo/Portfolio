@@ -157,9 +157,6 @@ header {
   max-height: 7.2rem;
 }
 
-.ativo {
-  text-decoration: underline;
-}
 
 #logo {
   margin: 0 1em;
@@ -169,11 +166,11 @@ header {
   min-width: fit-content;
   position: initial;
   visibility: visible;
+  font-weight: 700;
 }
 
 header a {
   /* margin-left: 1em; */
-  font-weight: 700;
   font-size: 2.88rem;
 }
 
@@ -182,13 +179,18 @@ header ul {
   justify-content: space-between;
   gap: 1.8rem;
   padding: 0;
-  justify-content: center;
   align-items: center;
   /* font-weight: bold; */
 }
 
 header nav ul li a {
   font-size: 1.6rem;
+  /* font-weight: 400; */
+}
+
+.ativo {
+  font-weight: 700;
+  text-shadow: -1px 1px 1px black;
 }
 
 #logo-bar {
@@ -279,11 +281,19 @@ aside {
 main {
   grid-area: main;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
+  flex-wrap: wrap;
   height: min-content;
-  gap: 0.8rem;
   /* animation-name: bodyAppear;
-    animation-duration: .5s; */
+  animation-duration: .5s; */
+}
+
+#project3Link {
+  width: 100%;
+}
+
+main a:not(#my-projects a, #project3Link) {
+  width: 50%;
 }
 
 main section {
@@ -293,9 +303,11 @@ main section {
 #my-projects {
   grid-area: my-projects;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  order: 1;
+  margin-bottom: .4rem;
+  order: -2;
 }
 
 #my-projects h2,
@@ -304,7 +316,12 @@ main section {
   margin: 0.8em;
 }
 
+#project3Link {
+  order: -1;
+}
+
 .project {
+  margin: 0.4rem;
   display: grid;
   grid-template-areas:
     "img name concept"
@@ -341,9 +358,13 @@ main section {
 .concept {
   grid-area: concept;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
   bottom: 2em;
   font-size: 65%;
-  margin: 1em;
+  margin: 1rem 0;
 }
 
 .stars {
@@ -529,6 +550,50 @@ aside section {
   box-shadow: 0 0 5px black;
 }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  rotate: 45deg;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
 @media (max-width: 300px) {
   header nav ul li a {
     font-size: 1rem;
@@ -565,5 +630,17 @@ aside section {
   header ul {
     margin-left: 1em;
     gap: 0.8rem;
+  }
+}
+
+@media (max-width: 750px) {
+  main a:not(#my-projects a) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .project {
+    min-width: fit-content;
   }
 }
