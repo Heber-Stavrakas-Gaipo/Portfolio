@@ -3,12 +3,27 @@
 <p align="center">Projeto destinado a concentrar e apresentar meus conhecimentos de programação, voltados ao desenvolvimento WEB.</p>
 
 <p align="center">
+  <a href="#tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#widescreen">Widescreen</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#750px">750px</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#mobile">Mobile</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#projeto">Projeto</a>
+  <a href="#mobile">Mobile</a>
 </p>
+
+## Tecnologias
+- HTML
+- CSS
+- JavaScript
+    - Axios
+    - Express
+    - Node.js
+
+## Projeto
+Esse projeto nasceu com a proposta de aplicar e desenvolver meus conhecimentos em HTML e CSS, para apresentar uma página inicial que servisse como portfólio. Mas decidi reunir aqui conhecimentos mais profundos, tanto HTML e CSS, quanto JavaScript e suas ferramentas.
+
+Esse README exibe uma apresentação estática e mais prática. Para além do exibido a Página inicial conta com um efeito em :hover para cada um dos projetos, a página de Certificados também possui efeito em :hover para cada um dos certificados e também para a logo da seção. Toda a estrutura conta também com um botão de "voltar ao topo" e efeito smooth quando clicado, um theme-switcher e requisições em APIs.
+
+![Back_top_button_and_certificates/home_page_hover](./assets/prints/Laptop/back_to_top_and_hover%2000_00_00-00_00_30.gif)
 
 ## Widescreen
 
@@ -38,18 +53,3 @@
 - Certificados
   - Tema escuro ![Certificados_tema_escuro](./assets/prints/Mobile/localhost_2023_certificates(mobile_default).png)
   - Tema claro ![Certificados_tema_claro](./assets/prints/Mobile/localhost_2023_certificates(mobile_light).png)
-
-## Tecnologias:
-- HTML
-- CSS
-- JavaScript
-    - Axios
-    - Express
-    - Node.js
-
-## Projeto
-Esse projeto nasceu com a proposta de aplicar e desenvolver meus conhecimentos em HTML e CSS, para apresentar uma página inicial que servisse como portfólio. Mas decidi reunir aqui conhecimentos mais profundos, tanto HTML e CSS, quanto JavaScript e suas ferramentas.
-
-Esse README exibe uma apresentação estática e mais prática. Para além do exibido a Página inicial conta com um efeito em :hover para cada um dos projetos, a página de Certificados também possui efeito em :hover para os cada um dos certificados e também para a logo da seção. Toda a estrutura conta também com um botão de "voltar ao topo" e efeito smooth quando clicado.
-
-![Back_top_button_and_certificates_hover](./assets/prints/Laptop/back_to_top_and_hover%2000_00_00-00_00_30.gif)
