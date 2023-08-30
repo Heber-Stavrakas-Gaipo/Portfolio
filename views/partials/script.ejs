@@ -7,6 +7,10 @@
       .get(`${url}/repos`)
       .then((response) => {
         const projects = response.data;
+
+        // Ordenar os projetos pelo ID
+        projects.sort((a, b) => a.id - b.id);
+
         projects.forEach((project, index) => {
           const projectNameElement = document.querySelector(
             `#project${index + 1}Name`
@@ -26,6 +30,10 @@
       .get(`${url}/repos`)
       .then((response) => {
         const projects = response.data;
+
+        // Ordenar os projetos pelo ID
+        projects.sort((a, b) => a.id - b.id);
+
         projects.forEach((project, index) => {
           const projectLinkElement = document.querySelector(
             `#project${index + 1}Link`
@@ -45,6 +53,10 @@
       .get(`${url}/repos`)
       .then((response) => {
         const projects = response.data;
+
+        // Ordenar os projetos pelo ID
+        projects.sort((a, b) => a.id - b.id);
+
         projects.forEach((project, index) => {
           const projectDscElement = document.querySelector(
             `#project${index + 1}Dsc`
@@ -73,6 +85,10 @@
       .get(`${url}/repos`)
       .then((response) => {
         const projects = response.data;
+
+        // Ordenar os projetos pelo ID
+        projects.sort((a, b) => a.id - b.id);
+
         projects.forEach((project, index) => {
           const projectStarElement = document.querySelector(
             `#project${index + 1}Stars`
@@ -91,6 +107,10 @@
       .get(`${url}/repos`)
       .then((response) => {
         const projects = response.data;
+
+        // Ordenar os projetos pelo ID
+        projects.sort((a, b) => a.id - b.id);
+
         projects.forEach((project, index) => {
           const projectForkElement = document.querySelector(
             `#project${index + 1}Forks`
@@ -109,6 +129,10 @@
       .get(`${url}/repos`)
       .then((response) => {
         const projects = response.data;
+
+        // Ordenar os projetos pelo ID
+        projects.sort((a, b) => a.id - b.id);
+
         projects.forEach((project, index) => {
           const projectLanguageElement = document.querySelector(
             `#project${index + 1}Language`
@@ -183,7 +207,7 @@
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 200) {
       scrollButton.classList.add("active");
-      scrollButton.setAttribute('title', 'Voltar para o topo')
+      scrollButton.setAttribute("title", "Voltar para o topo");
     } else {
       scrollButton.classList.remove("active");
     }

@@ -190,7 +190,6 @@ header nav ul li a {
 
 .ativo {
   font-weight: 700;
-  text-shadow: -1px 1px 1px black;
 }
 
 #logo-bar {
@@ -288,11 +287,11 @@ main {
   animation-duration: .5s; */
 }
 
-#project3Link {
+#project2Link {
   width: 100%;
 }
 
-main a:not(#my-projects a, #project3Link) {
+main a:not(#my-projects a, #project2Link) {
   width: 50%;
 }
 
@@ -316,7 +315,7 @@ main section {
   margin: 0.8em;
 }
 
-#project3Link {
+#project2Link {
   order: -1;
 }
 
