@@ -2,153 +2,153 @@
   const url = "https://api.github.com/users/Heber-Stavrakas-Gaipo";
   const e = (error) => console.error(error);
 
-  function displayProjectNames() {
-    axios
-      .get(`${url}/repos`)
-      .then((response) => {
-        const projects = response.data;
+  // function displayProjectNames() {
+  //   axios
+  //     .get(`${url}/repos`)
+  //     .then((response) => {
+  //       const projects = response.data;
 
-        // Ordenar os projetos pelo ID
-        projects.sort((a, b) => a.id - b.id);
+  //       // Ordenar os projetos pelo ID
+  //       projects.sort((a, b) => a.id - b.id);
 
-        projects.forEach((project, index) => {
-          const projectNameElement = document.querySelector(
-            `#project${index + 1}Name`
-          );
-          if (projectNameElement) {
-            projectNameElement.textContent = project.name;
-          }
-        });
-      })
-      .catch(e);
-  }
+  //       projects.forEach((project, index) => {
+  //         const projectNameElement = document.querySelector(
+  //           `#project${index + 1}Name`
+  //         );
+  //         if (projectNameElement) {
+  //           projectNameElement.textContent = project.name;
+  //         }
+  //       });
+  //     })
+  //     .catch(e);
+  // }
 
-  displayProjectNames();
+  // displayProjectNames();
 
-  function projectLinks() {
-    axios
-      .get(`${url}/repos`)
-      .then((response) => {
-        const projects = response.data;
+  // function projectLinks() {
+  //   axios
+  //     .get(`${url}/repos`)
+  //     .then((response) => {
+  //       const projects = response.data;
 
-        // Ordenar os projetos pelo ID
-        projects.sort((a, b) => a.id - b.id);
+  //       // Ordenar os projetos pelo ID
+  //       projects.sort((a, b) => a.id - b.id);
 
-        projects.forEach((project, index) => {
-          const projectLinkElement = document.querySelector(
-            `#project${index + 1}Link`
-          );
-          if (projectLinkElement) {
-            projectLinkElement.setAttribute("href", project.html_url);
-          }
-        });
-      })
-      .catch(e);
-  }
+  //       projects.forEach((project, index) => {
+  //         const projectLinkElement = document.querySelector(
+  //           `#project${index + 1}Link`
+  //         );
+  //         if (projectLinkElement) {
+  //           projectLinkElement.setAttribute("href", project.html_url);
+  //         }
+  //       });
+  //     })
+  //     .catch(e);
+  // }
 
-  projectLinks();
+  // projectLinks();
 
-  function getDescriptions() {
-    axios
-      .get(`${url}/repos`)
-      .then((response) => {
-        const projects = response.data;
+  // function getDescriptions() {
+  //   axios
+  //     .get(`${url}/repos`)
+  //     .then((response) => {
+  //       const projects = response.data;
 
-        // Ordenar os projetos pelo ID
-        projects.sort((a, b) => a.id - b.id);
+  //       // Ordenar os projetos pelo ID
+  //       projects.sort((a, b) => a.id - b.id);
 
-        projects.forEach((project, index) => {
-          const projectDscElement = document.querySelector(
-            `#project${index + 1}Dsc`
-          );
-          if (projectDscElement) {
-            projectDscElement.textContent = project.description;
-          }
-        });
-      })
-      .catch(e);
-  }
-  getDescriptions();
+  //       projects.forEach((project, index) => {
+  //         const projectDscElement = document.querySelector(
+  //           `#project${index + 1}Dsc`
+  //         );
+  //         if (projectDscElement) {
+  //           projectDscElement.textContent = project.description;
+  //         }
+  //       });
+  //     })
+  //     .catch(e);
+  // }
+  // getDescriptions();
 
-  function getGithubUserName() {
-    axios
-      .get(url)
-      .then((response) => {
-        githubUserName.textContent = response.data.login;
-      })
-      .catch(e);
-  }
-  getGithubUserName();
+  // function getGithubUserName() {
+  //   axios
+  //     .get(url)
+  //     .then((response) => {
+  //       githubUserName.textContent = response.data.login;
+  //     })
+  //     .catch(e);
+  // }
+  // getGithubUserName();
 
-  function getStars() {
-    axios
-      .get(`${url}/repos`)
-      .then((response) => {
-        const projects = response.data;
+  // function getStars() {
+  //   axios
+  //     .get(`${url}/repos`)
+  //     .then((response) => {
+  //       const projects = response.data;
 
-        // Ordenar os projetos pelo ID
-        projects.sort((a, b) => a.id - b.id);
+  //       // Ordenar os projetos pelo ID
+  //       projects.sort((a, b) => a.id - b.id);
 
-        projects.forEach((project, index) => {
-          const projectStarElement = document.querySelector(
-            `#project${index + 1}Stars`
-          );
-          if (projectStarElement) {
-            projectStarElement.textContent = project.stargazers_count;
-          }
-        });
-      })
-      .catch(e);
-  }
-  getStars();
+  //       projects.forEach((project, index) => {
+  //         const projectStarElement = document.querySelector(
+  //           `#project${index + 1}Stars`
+  //         );
+  //         if (projectStarElement) {
+  //           projectStarElement.textContent = project.stargazers_count;
+  //         }
+  //       });
+  //     })
+  //     .catch(e);
+  // }
+  // getStars();
 
-  function getForks() {
-    axios
-      .get(`${url}/repos`)
-      .then((response) => {
-        const projects = response.data;
+  // function getForks() {
+  //   axios
+  //     .get(`${url}/repos`)
+  //     .then((response) => {
+  //       const projects = response.data;
 
-        // Ordenar os projetos pelo ID
-        projects.sort((a, b) => a.id - b.id);
+  //       // Ordenar os projetos pelo ID
+  //       projects.sort((a, b) => a.id - b.id);
 
-        projects.forEach((project, index) => {
-          const projectForkElement = document.querySelector(
-            `#project${index + 1}Forks`
-          );
-          if (projectForkElement) {
-            projectForkElement.textContent = project.forks;
-          }
-        });
-      })
-      .catch(e);
-  }
-  getForks();
+  //       projects.forEach((project, index) => {
+  //         const projectForkElement = document.querySelector(
+  //           `#project${index + 1}Forks`
+  //         );
+  //         if (projectForkElement) {
+  //           projectForkElement.textContent = project.forks;
+  //         }
+  //       });
+  //     })
+  //     .catch(e);
+  // }
+  // getForks();
 
-  function getLanguage() {
-    axios
-      .get(`${url}/repos`)
-      .then((response) => {
-        const projects = response.data;
+  // function getLanguage() {
+  //   axios
+  //     .get(`${url}/repos`)
+  //     .then((response) => {
+  //       const projects = response.data;
 
-        // Ordenar os projetos pelo ID
-        projects.sort((a, b) => a.id - b.id);
+  //       // Ordenar os projetos pelo ID
+  //       projects.sort((a, b) => a.id - b.id);
 
-        projects.forEach((project, index) => {
-          const projectLanguageElement = document.querySelector(
-            `#project${index + 1}Language`
-          );
+  //       projects.forEach((project, index) => {
+  //         const projectLanguageElement = document.querySelector(
+  //           `#project${index + 1}Language`
+  //         );
 
-          if (projectLanguageElement) {
-            projectLanguageElement.textContent = project.language;
-            projectLanguageElement.classList.add(
-              `language-${project.language.toLowerCase()}`
-            );
-          }
-        });
-      })
-      .catch(e);
-  }
-  getLanguage();
+  //         if (projectLanguageElement) {
+  //           projectLanguageElement.textContent = project.language;
+  //           projectLanguageElement.classList.add(
+  //             `language-${project.language.toLowerCase()}`
+  //           );
+  //         }
+  //       });
+  //     })
+  //     .catch(e);
+  // }
+  // getLanguage();
 
   // function to set a given theme/color-scheme
   function setTheme(themeName) {

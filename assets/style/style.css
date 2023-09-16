@@ -323,7 +323,7 @@ main section {
   margin: 0.4rem;
   display: grid;
   grid-template-areas:
-    "img name concept"
+    "img name name"
     "dsc dsc dsc"
     "stars forks language";
   grid-auto-columns: 1fr 100fr 1fr;
@@ -387,7 +387,7 @@ main section {
 .language {
   display: flex;
   grid-area: language;
-  margin-right: 1em;
+  margin-right: 1rem;
   justify-content: end;
 }
 
