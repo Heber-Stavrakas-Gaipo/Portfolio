@@ -20,6 +20,10 @@
   --scroll-text: black;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -186,6 +190,10 @@ header ul {
 header nav ul li a {
   font-size: 1.6rem;
   /* font-weight: 400; */
+}
+
+header div nav ul li a:focus {
+  text-decoration: underline;
 }
 
 .ativo {
