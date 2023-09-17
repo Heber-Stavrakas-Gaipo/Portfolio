@@ -4,7 +4,8 @@
   "description": "This initial project will be used to exercite HTML and CSS principally, as the knowlegede progresses I will introduce others concepts, technologies and languages.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch server.js"
   },
   "keywords": [],
   "author": "Héber Stavrakas Gaipo",
