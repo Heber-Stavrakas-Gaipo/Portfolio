@@ -13,7 +13,7 @@ app.get("/", async function (req, res) {
   const postsResponse = fetch(url);
   const [posts] = await Promise.all([postsResponse]);
   const postsJson = await posts.json();
-  // Aplicar a lógica para ignorar o objeto com name igual a "Héber"
+  // Aplicar a lógica para ignorar o objeto "Heber-Stavrakas-Gaipo.md"
   const filteredPosts = postsJson.filter((post) => post.name !== "Heber-Stavrakas-Gaipo");
   const post = filteredPosts.map((post) => {
     return {...post};

@@ -387,8 +387,11 @@ main section {
 .language {
   display: flex;
   grid-area: language;
-  margin-right: 1rem;
   justify-content: end;
+}
+
+.language>p {
+  margin: 0;
 }
 
 .stars svg,
