@@ -151,22 +151,45 @@
   // getLanguage();
 
   // function to set a given theme/color-scheme
+
+  const sons = document.querySelectorAll(".img");
+  sons.forEach(son => {
+    const parent = son.parentElement;
+    parent.style.backgroundColor = "#8257e5";
+  });
+
   function setTheme(themeName) {
     localStorage.setItem("theme", themeName);
     document.documentElement.className = themeName;
   }
 
+  const iaForDevsCertificate = document.querySelector("#ia-para-devs");
+  const nlwAiCertificate = document.querySelector("#nlw-ai");
+
   // function to toggle between light and dark theme
   function toggleTheme() {
+    const switchButton = document.querySelector("#switch");
     if (localStorage.getItem("theme") === "theme-light") {
-      document
-        .querySelector("#switch")
-        .setAttribute("title", "Alterar para tema claro");
+      switchButton.setAttribute("title", "Alterar para tema claro");
+      iaForDevsCertificate.setAttribute(
+        "src",
+        "/certificates/certificate-ia-para-devs-default.png"
+      );
+      nlwAiCertificate.setAttribute(
+        "src",
+        "/certificates/certificate-nlw-ia-default.png"
+      );
       setTheme("theme-default");
     } else {
-      document
-        .querySelector("#switch")
-        .setAttribute("title", "Alterar para tema escuro");
+      switchButton.setAttribute("title", "Alterar para tema escuro");
+      iaForDevsCertificate.setAttribute(
+        "src",
+        "/certificates/certificate-ia-para-devs-light.png"
+      );
+      nlwAiCertificate.setAttribute(
+        "src",
+        "/certificates/certificate-nlw-ia-light.png"
+      );
       setTheme("theme-light");
     }
   }
@@ -176,9 +199,25 @@
     if (localStorage.getItem("theme") === "theme-default") {
       setTheme("theme-default");
       document.getElementById("slider").checked = false;
+      iaForDevsCertificate.setAttribute(
+        "src",
+        "/certificates/certificate-ia-para-devs-default.png"
+      );
+      nlwAiCertificate.setAttribute(
+        "src",
+        "/certificates/certificate-nlw-ia-default.png"
+      );
     } else {
       setTheme("theme-light");
       document.getElementById("slider").checked = true;
+      iaForDevsCertificate.setAttribute(
+        "src",
+        "/certificates/certificate-ia-para-devs-light.png"
+      );
+      nlwAiCertificate.setAttribute(
+        "src",
+        "/certificates/certificate-nlw-ia-light.png"
+      );
     }
 
     // Add event listener to the theme switcher button

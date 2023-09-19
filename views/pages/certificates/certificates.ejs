@@ -11,7 +11,7 @@
     include('../../partials/back_button'); %> <%-
     include('../../partials/header'); %>
     <main>
-      <div id="rocketseat-section">
+      <section id="rocketseat-section">
         <svg
           id="rocketseat-section-logo"
           width="192"
@@ -63,7 +63,7 @@
           </g>
         </svg>
         <div id="rocketseat-certificates">
-          <section class="certificates" title="Abrir certificado">
+          <div class="certificates" title="Abrir certificado">
             <div onclick="ampliarImagem(this)" class="c-eWwdBQ">
               <svg
                 id="conectar"
@@ -1759,8 +1759,8 @@
                 </defs>
               </svg>
             </div>
-          </section>
-          <section class="certificates" title="Abrir certificado">
+          </div>
+          <div class="certificates" title="Abrir certificado">
             <div onclick="ampliarImagem(this)" class="c-eWwdBQ">
               <svg
                 id="fundamentar"
@@ -3455,8 +3455,8 @@
                 </defs>
               </svg>
             </div>
-          </section>
-          <section class="certificates" title="Abrir certificado">
+          </div>
+          <div class="certificates" title="Abrir certificado">
             <div onclick="ampliarImagem(this)" class="c-eWwdBQ">
               <svg
                 id="especializar"
@@ -5160,8 +5160,8 @@
                 </defs>
               </svg>
             </div>
-          </section>
-          <section class="certificates" title="Abrir certificado">
+          </div>
+          <div class="certificates" title="Abrir certificado">
             <div onclick="ampliarImagem(this)" class="c-eWwdBQ">
               <svg
                 id="Discover"
@@ -6828,9 +6828,27 @@
                 </defs>
               </svg>
             </div>
-          </section>
+          </div>
+          <div class="certificates" title="Abrir certificado">
+            <div onclick="ampliarImagem(this)">
+              <img
+                id="ia-para-devs"
+                class="certificate img"
+                src=""
+                alt="Certificado de participação no evento Inteligência Artificial para Desenvolvedores" />
+            </div>
+          </div>
+          <div class="certificates" title="Abrir certificado">
+            <div onclick="ampliarImagem(this)">
+              <img
+                id="nlw-ai"
+                class="certificate img"
+                src=""
+                alt="Certificado de participação no evento Next Level Week - Artificial Intelligence" />
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
       <hr />
     </main>
     <%- include('../../partials/aside'); %> <%-
@@ -6838,6 +6856,8 @@
     %>
     <script>
       function ampliarImagem(svg) {
+        const sons = document.querySelectorAll(".img");
+
         // Amplia a imagem
         svg.classList.add("ampliada");
         svg.style.cssText = "box-shadow: 0px 0px 0px;";
@@ -6856,6 +6876,10 @@
 
           // Remove o botão de fechar
           document.body.removeChild(fecharBotao);
+          sons.forEach((son) => {
+            const parent = son.parentElement;
+            parent.style.backgroundColor = "#8257e5";
+          });
         };
 
         // Adiciona o botão de fechar à página
@@ -6866,6 +6890,10 @@
           if (event.key === "Escape") {
             // Simula o clique no botão de fechar
             fecharBotao.click();
+            sons.forEach((son) => {
+              const parent = son.parentElement;
+              parent.style.backgroundColor = "#8257e5";
+            });
           }
         });
       }
