@@ -261,30 +261,31 @@
   });
 
   // Obtém o elemento <a> de cada link da header
-  const paginaInicialLink = document.getElementById("home");
-  const sobreMimLink = document.getElementById("about");
-  const certificadosLink = document.getElementById("certificates");
+  const homePageLink = document.getElementById("home");
+  const aboutLink = document.getElementById("about");
+  const certificatesLink = document.getElementById("certificates");
 
   // Obtém o nome da página atual da URL (assumindo que sua URL seja algo como "http://seusite.com/pagina-inicial.html")
-  const paginaAtual = window.location.href.split("localhost:2023/").pop();
+  const arrayURL = window.location.href.split("/");
+  const [currentPage] = arrayURL.slice(3, 4)
 
   // Função para atualizar as classes com base na página atual
-  function atualizarEstiloDaHeader() {
+  function updateHeaderStyle() {
     // Remove todas as classes ativas primeiro
-    paginaInicialLink.classList.remove("ativo");
-    sobreMimLink.classList.remove("ativo");
-    certificadosLink.classList.remove("ativo");
+    homePageLink.classList.remove("ativo");
+    aboutLink.classList.remove("ativo");
+    certificatesLink.classList.remove("ativo");
 
     // Adiciona a classe ativa apenas à página correspondente
-    if (paginaAtual === "") {
-      paginaInicialLink.classList.add("ativo");
-    } else if (paginaAtual === "about") {
-      sobreMimLink.classList.add("ativo");
-    } else if (paginaAtual === "certificates/") {
-      certificadosLink.classList.add("ativo");
+    if (currentPage === "") {
+      homePageLink.classList.add("ativo");
+    } else if (currentPage === "about") {
+      aboutLink.classList.add("ativo");
+    } else if (currentPage === "certificates") {
+      certificatesLink.classList.add("ativo");
     }
   }
 
   // Chama a função inicialmente para configurar o estilo com base na página atual
-  atualizarEstiloDaHeader();
+  updateHeaderStyle();
 </script>
