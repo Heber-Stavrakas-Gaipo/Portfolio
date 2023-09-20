@@ -192,7 +192,7 @@ header div nav ul li a:focus {
   text-decoration: underline;
 }
 
-.ativo {
+.active {
   font-weight: 700;
 }
 

@@ -150,14 +150,13 @@
   // }
   // getLanguage();
 
-  // function to set a given theme/color-scheme
-
   const sons = document.querySelectorAll(".img");
-  sons.forEach(son => {
+  sons.forEach((son) => {
     const parent = son.parentElement;
     parent.style.backgroundColor = "#8257e5";
   });
 
+  // function to set a given theme/color-scheme
   function setTheme(themeName) {
     localStorage.setItem("theme", themeName);
     document.documentElement.className = themeName;
@@ -227,32 +226,32 @@
   document.querySelector("body").setAttribute("class", "hide-scrollbar");
 
   window.addEventListener("load", function () {
-    // Quando a página estiver completamente carregada, oculta a tela de loading com transição suave
+    // When the page is fully loaded, hide the loading screen with a smooth transition
     const loadingScreen = document.getElementById("loadingScreen");
-    loadingScreen.style.opacity = 0; // Definimos a opacidade para 0 (completamente transparente)
+    loadingScreen.style.opacity = 0; // We set the opacity to 0 (completely transparent)
 
-    // Aguarda um pequeno intervalo antes de remover a tela de loading
+    // Wait for a short interval before removing the loading screen
     setTimeout(function () {
       loadingScreen.style.display = "none";
-    }, 0); // A transição tem duração de 0.3 segundos (300 milissegundos)
+    }, 0); // The transition has a duration of 0.3 seconds (300 milliseconds)
 
-    // Remove a classe que oculta a scrollbar
+    // Remove the class that hides the scrollbar
     document.body.classList.remove("hide-scrollbar");
   });
 
   const scrollButton = document.querySelector(".scroll-to-top");
 
-  // Mostrar a seta quando o usuário rolar a página
+  // Show the arrow when the user scrolls the page
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 200) {
       scrollButton.classList.add("active");
-      scrollButton.setAttribute("title", "Voltar para o topo");
+      scrollButton.setAttribute("title", "Back to top");
     } else {
       scrollButton.classList.remove("active");
     }
   });
 
-  // Rolagem suave para o topo quando a seta for clicada
+  // Smooth scroll to the top when the arrow is clicked
   scrollButton.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
@@ -260,32 +259,32 @@
     });
   });
 
-  // Obtém o elemento <a> de cada link da header
+  // Get the <a> element for each link in the header
   const homePageLink = document.getElementById("home");
   const aboutLink = document.getElementById("about");
   const certificatesLink = document.getElementById("certificates");
 
-  // Obtém o nome da página atual da URL (assumindo que sua URL seja algo como "http://seusite.com/pagina-inicial.html")
+  // Get the current page name from the URL (assuming your URL is something like "http://yoursite.com/homepage.html")
   const arrayURL = window.location.href.split("/");
-  const [currentPage] = arrayURL.slice(3, 4)
+  const [currentPage] = arrayURL.slice(3, 4);
 
-  // Função para atualizar as classes com base na página atual
+  // Function to update classes based on the current page
   function updateHeaderStyle() {
-    // Remove todas as classes ativas primeiro
-    homePageLink.classList.remove("ativo");
-    aboutLink.classList.remove("ativo");
-    certificatesLink.classList.remove("ativo");
+    // First, remove all active classes
+    homePageLink.classList.remove("active");
+    aboutLink.classList.remove("active");
+    certificatesLink.classList.remove("active");
 
-    // Adiciona a classe ativa apenas à página correspondente
+    // Add the active class only to the corresponding page
     if (currentPage === "") {
-      homePageLink.classList.add("ativo");
+      homePageLink.classList.add("active");
     } else if (currentPage === "about") {
-      aboutLink.classList.add("ativo");
+      aboutLink.classList.add("active");
     } else if (currentPage === "certificates") {
-      certificatesLink.classList.add("ativo");
+      certificatesLink.classList.add("active");
     }
   }
 
-  // Chama a função inicialmente para configurar o estilo com base na página atual
+  // Call the function initially to set up the style based on the current page
   updateHeaderStyle();
 </script>
