@@ -170,6 +170,7 @@
   function toggleTheme() {
     const switchButton = document.querySelector("#switch");
     if (localStorage.getItem("theme") === "theme-light") {
+      setTheme("theme-default");
       switchButton.setAttribute("title", "Alterar para tema claro");
       iaForDevsCertificate.setAttribute(
         "src",
@@ -179,8 +180,8 @@
         "src",
         "/certificates/certificate-nlw-ia-default.png"
       );
-      setTheme("theme-default");
     } else {
+      setTheme("theme-light");
       switchButton.setAttribute("title", "Alterar para tema escuro");
       iaForDevsCertificate.setAttribute(
         "src",
@@ -190,7 +191,6 @@
         "src",
         "/certificates/certificate-nlw-ia-light.png"
       );
-      setTheme("theme-light");
     }
   }
 
@@ -266,7 +266,7 @@
   const certificadosLink = document.getElementById("certificates");
 
   // Obtém o nome da página atual da URL (assumindo que sua URL seja algo como "http://seusite.com/pagina-inicial.html")
-  const paginaAtual = window.location.href.split("/").pop();
+  const paginaAtual = window.location.href.split("localhost:2023/").pop();
 
   // Função para atualizar as classes com base na página atual
   function atualizarEstiloDaHeader() {
@@ -280,7 +280,7 @@
       paginaInicialLink.classList.add("ativo");
     } else if (paginaAtual === "about") {
       sobreMimLink.classList.add("ativo");
-    } else if (paginaAtual === "certificates") {
+    } else if (paginaAtual === "certificates/") {
       certificadosLink.classList.add("ativo");
     }
   }
