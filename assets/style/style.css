@@ -336,11 +336,17 @@ main section {
   text-align: justify;
   position: relative;
   min-height: 18rem;
+  transition: opacity 350ms linear;
 }
 
 .project:hover {
   bottom: .5rem;
   box-shadow: 0px 1.5rem 1.5rem rgb(0, 0, 0, 0.25);
+}
+
+/* Doesn't run well when on focus in mobile */
+main:has(.project:hover) .project:not(:hover) {
+  opacity: .5;
 }
 
 .first-line, .end-line>div, .end-line {
@@ -645,14 +651,14 @@ aside section {
   }
 }
 
-@media (max-width: 750px) {
-  main a:not(#my-projects a) {
-    width: 100%;
-  }
-}
-
 @media (max-width: 800px) {
   .project {
     min-width: fit-content;
+  }
+}
+
+@media (max-width: 1105px) {
+  main a:not(#my-projects a) {
+    width: 100%;
   }
 }
