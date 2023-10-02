@@ -29,6 +29,7 @@ main hr {
 }
 
 #rocketseat-section-logo {
+  min-width: fit-content;
   margin-bottom: 0.8rem;
   transition: all .2s;
   transition-timing-function: linear;
