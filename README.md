@@ -23,7 +23,8 @@ Esse projeto nasceu com a proposta de aplicar e desenvolver meus conhecimentos e
 
 Esse README exibe uma apresentação estática e mais prática. O gif apresenta alguns recursos extras como efeitos em :hover, :focus, um botão de "voltar ao topo" com efeito smooth quando clicado, um theme-switcher e requisições em APIs. O site também conta com media queries.
 
-![Back_top_button_and_certificates/home_page_hover](./assets/prints/back_to_top_and_hover%2000_00_00-00_00_30.gif)
+![page_example_part1](./assets/prints/page-example.gif)
+![page_example_part2](./assets/prints/page-examplept2.gif)
 
 ## Home
 
