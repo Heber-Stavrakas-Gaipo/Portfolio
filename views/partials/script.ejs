@@ -171,25 +171,9 @@
     if (localStorage.getItem("theme") === "theme-light") {
       setTheme("theme-default");
       switchButton.setAttribute("title", "Alterar para tema claro");
-      iaForDevsCertificate.setAttribute(
-        "src",
-        "/certificates/certificate-ia-para-devs-default.png"
-      );
-      nlwAiCertificate.setAttribute(
-        "src",
-        "/certificates/certificate-nlw-ia-default.png"
-      );
     } else {
       setTheme("theme-light");
       switchButton.setAttribute("title", "Alterar para tema escuro");
-      iaForDevsCertificate.setAttribute(
-        "src",
-        "/certificates/certificate-ia-para-devs-light.png"
-      );
-      nlwAiCertificate.setAttribute(
-        "src",
-        "/certificates/certificate-nlw-ia-light.png"
-      );
     }
   }
 
@@ -198,25 +182,9 @@
     if (localStorage.getItem("theme") === "theme-default") {
       setTheme("theme-default");
       document.getElementById("slider").checked = false;
-      iaForDevsCertificate.setAttribute(
-        "src",
-        "/certificates/certificate-ia-para-devs-default.png"
-      );
-      nlwAiCertificate.setAttribute(
-        "src",
-        "/certificates/certificate-nlw-ia-default.png"
-      );
     } else {
       setTheme("theme-light");
       document.getElementById("slider").checked = true;
-      iaForDevsCertificate.setAttribute(
-        "src",
-        "/certificates/certificate-ia-para-devs-light.png"
-      );
-      nlwAiCertificate.setAttribute(
-        "src",
-        "/certificates/certificate-nlw-ia-light.png"
-      );
     }
 
     // Add event listener to the theme switcher button

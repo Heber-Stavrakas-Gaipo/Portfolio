@@ -64,7 +64,6 @@ main p {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 211.984px;
 }
 
 .certificate:hover {
@@ -72,14 +71,10 @@ main p {
   transition: box-shadow 0.1s;
 }
 
-svg.certificate {
-  min-width: 263.125px;
-  min-height: 185.9375px;
-}
-
 img.certificate {
-  width: 300px;
+  width: 35.5rem;
   height: auto;
+  border: 5px solid #8257e5;
 }
 
 .ampliada {
@@ -100,10 +95,6 @@ img.certificate {
 div.ampliada>img {
   height: 100vh;
   width: auto;
-}
-
-.ampliada svg {
-  align-self: center;
 }
 
 /* Botão para fechar a imagem ampliada */
