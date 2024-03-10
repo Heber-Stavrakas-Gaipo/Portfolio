@@ -9,22 +9,22 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/assets"));
 app.use(favicon(path.join(__dirname, "assets", "icons", "myfavicon.png")));
 
-let fileUpload = require('express-fileupload');
+let fileUpload = require("express-fileupload");
 app.use(fileUpload());
 
 app.get("/", async function (req, res) {
   const postsResponse = fetch(url);
   const [posts] = await Promise.all([postsResponse]);
   const postsJson = await posts.json();
-  // Aplicar a lógica para ignorar o objeto "Heber-Stavrakas-Gaipo.md"
+  // Applying logic to ignore the object "Heber-Stavrakas-Gaipo.md"
   const filteredPosts = postsJson.filter(
     (post) => post.name !== "Heber-Stavrakas-Gaipo"
   );
   const post = filteredPosts.map((post) => {
-    return {...post};
+    return { ...post };
   });
   post.sort((a, b) => a.id - b.id);
-  res.render("pages/home/index", {projects: post});
+  res.render("pages/home/index", { projects: post });
 });
 
 app.get("/about", function (req, res) {

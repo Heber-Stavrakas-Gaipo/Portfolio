@@ -60,7 +60,7 @@ main p {
   cursor: pointer;
 }
 
-.certificates>div {
+.certificates > div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,7 +77,7 @@ img.certificate {
   border: 5px solid #8257e5;
 }
 
-.ampliada {
+.enlarged {
   position: fixed;
   top: 0;
   left: 0;
@@ -92,13 +92,13 @@ img.certificate {
   background-color: var(--zoomIn-bg-color);
 }
 
-div.ampliada>img {
+div.enlarged > img {
   height: 100vh;
   width: auto;
 }
 
-/* Botão para fechar a imagem ampliada */
-.fechar-botao {
+/* button to close enlarged image */
+.close-button {
   position: fixed;
   top: 10px;
   right: 10px;

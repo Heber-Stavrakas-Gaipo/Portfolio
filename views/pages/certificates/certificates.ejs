@@ -78,27 +78,47 @@
         </svg>
         <div id="rocketseat-certificates">
           <div class="certificates" title="Abrir certificado">
-            <div onclick="ampliarImagem(this)" class="c-eWwdBQ">
-              <img src="/certificates/discover-conectar-certificate_page-0001.jpg" alt="" id="conectar" class="certificate img">
+            <div onclick="enlargeImage(this)" class="c-eWwdBQ">
+              <img
+                src="/certificates/discover-conectar-certificate_page-0001.jpg"
+                alt=""
+                id="conectar"
+                class="certificate img"
+              />
             </div>
           </div>
           <div class="certificates" title="Abrir certificado">
-            <div onclick="ampliarImagem(this)" class="c-eWwdBQ">
-              <img src="/certificates/discover-fundamentar-certificate_page-0001.jpg" alt="" id="fundamentar" class="certificate img">
+            <div onclick="enlargeImage(this)" class="c-eWwdBQ">
+              <img
+                src="/certificates/discover-fundamentar-certificate_page-0001.jpg"
+                alt=""
+                id="fundamentar"
+                class="certificate img"
+              />
             </div>
           </div>
           <div class="certificates" title="Abrir certificado">
-            <div onclick="ampliarImagem(this)" class="c-eWwdBQ">
-              <img src="/certificates/discover-especializar-certificate_page-0001.jpg" alt="" id="especializar" class="certificate img">
+            <div onclick="enlargeImage(this)" class="c-eWwdBQ">
+              <img
+                src="/certificates/discover-especializar-certificate_page-0001.jpg"
+                alt=""
+                id="especializar"
+                class="certificate img"
+              />
             </div>
           </div>
           <div class="certificates" title="Abrir certificado">
-            <div onclick="ampliarImagem(this)" class="c-eWwdBQ">
-              <img src="/certificates/discover-discover-certificate_page-0001.jpg" class="certificate img" alt="" id="discover" />
+            <div onclick="enlargeImage(this)" class="c-eWwdBQ">
+              <img
+                src="/certificates/discover-discover-certificate_page-0001.jpg"
+                class="certificate img"
+                alt=""
+                id="discover"
+              />
             </div>
           </div>
           <div class="certificates" title="Abrir certificado">
-            <div onclick="ampliarImagem(this)">
+            <div onclick="enlargeImage(this)">
               <img
                 id="ia-para-devs"
                 class="certificate img"
@@ -108,7 +128,7 @@
             </div>
           </div>
           <div class="certificates" title="Abrir certificado">
-            <div onclick="ampliarImagem(this)">
+            <div onclick="enlargeImage(this)">
               <img
                 id="nlw-ai"
                 class="certificate img"
@@ -123,46 +143,6 @@
     </main>
     <%- include('../../partials/aside'); %> <%-
     include('../../partials/footer'); %> <%- include('../../partials/script');
-    %>
-    <script>
-      function ampliarImagem(img) {
-        const sons = document.querySelectorAll(".img");
-
-        // Amplia a imagem
-        img.classList.add("ampliada");
-        img.style.cssText = "box-shadow: 0px 0px 0px;";
-        img.setAttribute("title", "");
-
-        // Cria um botão para fechar a imagem ampliada
-        var fecharBotao = document.createElement("button");
-        fecharBotao.innerHTML =
-          '<i class="fas fa-times white" title="Fechar certificado"></i>';
-        fecharBotao.classList.add("fechar-botao");
-        fecharBotao.onclick = function () {
-          // Remove a classe que centraliza a imagem ampliada
-          img.classList.remove("ampliada");
-          // Volta a imagem para a escala original
-          img.style.transform = img.originalScale;
-
-          // Remove o botão de fechar
-          document.body.removeChild(fecharBotao);
-        };
-
-        // Adiciona o botão de fechar à página
-        document.body.appendChild(fecharBotao);
-
-        // Adiciona um event listener para detectar quando a tecla Escape for pressionada
-        document.addEventListener("keydown", function (event) {
-          if (event.key === "Escape") {
-            // Simula o clique no botão de fechar
-            fecharBotao.click();
-            sons.forEach((son) => {
-              const parent = son.parentElement;
-              parent.style.backgroundColor = "#8257e5";
-            });
-          }
-        });
-      }
-    </script>
+    %> <%- include('../../partials/certificatesScript.ejs'); %>
   </body>
 </html>

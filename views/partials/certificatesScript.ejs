@@ -1,0 +1,40 @@
+<script>
+  function enlargeImage(img) {
+    const sons = document.querySelectorAll(".img");
+
+    // Enlarge image
+    img.classList.add("enlarged");
+    img.style.cssText = "box-shadow: 0px 0px 0px;";
+    img.setAttribute("title", "");
+
+    // Create a button to close enlarged image
+    var closeButton = document.createElement("button");
+    closeButton.innerHTML =
+      '<i class="fas fa-times white" title="Fechar certificado"></i>';
+    closeButton.classList.add("close-button");
+    closeButton.onclick = function () {
+      // Remove 'enlarged' class
+      img.classList.remove("enlarged");
+      // Set original image scale
+      img.style.transform = img.originalScale;
+
+      // Remove close button
+      document.body.removeChild(closeButton);
+    };
+
+    // Add close button
+    document.body.appendChild(closeButton);
+
+    // Add an event listener to detect when Escape is pressed
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        // Simulate close button press
+        closeButton.click();
+        sons.forEach((son) => {
+          const parent = son.parentElement;
+          parent.style.backgroundColor = "#8257e5";
+        });
+      }
+    });
+  }
+</script>
