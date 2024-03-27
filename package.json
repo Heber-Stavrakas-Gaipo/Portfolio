@@ -4,18 +4,25 @@
   "description": "This initial project will be used to exercite HTML and CSS principally, as the knowlegede progresses I will introduce others concepts, technologies and languages.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --watch server.js"
+    "start": "node --watch server.js",
+    "eslint": "eslint ./",
+    "eslint-fix": "eslint ./ --fix",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "Héber Stavrakas Gaipo",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^1.6.8",
     "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "express-fileupload": "^1.4.0",
+    "express": "^4.19.2",
+    "express-fileupload": "^1.5.0",
     "path": "^0.12.7",
     "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   }
 }
