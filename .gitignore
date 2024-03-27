@@ -1,6 +1,1 @@
 node_modules
-.vercel
-vercel.json
-webpack.config.js
-.eslintrc.js
-.eslintignore
