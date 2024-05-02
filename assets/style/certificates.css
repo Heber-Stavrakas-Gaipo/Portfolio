@@ -24,11 +24,20 @@ main hr {
   border-color: var(--body-bg-color);
 }
 
-#rocketseat-section {
+.certificate-section {
   background-color: var(--body-bg-color);
 }
 
-#rocketseat-section-logo {
+.certificate-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+}
+
+.section-logo {
   min-width: fit-content;
   margin-bottom: 0.8rem;
   transition: all .2s;
@@ -40,25 +49,20 @@ main hr {
   border-left: .8rem solid #8257E6;
 }
 
-#rocketseat-certificates {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
+#rocketseat-certificates .certificates img.certificate {
+  border: 5px solid #8257e5;
 }
+
+#dio-section:hover #dio-section-logo {
+  padding-left: 1rem;
+  border-left: .8rem solid #3cafe2;
+}
+
 
 main p {
   font-size: 1rem;
 }
 
-.certificates {
-  display: inline-block;
-  padding: 0;
-  justify-content: center;
-  cursor: pointer;
-}
 
 .certificates > div {
   display: flex;
@@ -69,12 +73,12 @@ main p {
 .certificate:hover {
   box-shadow: 0px 1rem 1rem rgb(0, 0, 0, 0.25);
   transition: box-shadow 0.1s;
+  cursor: pointer;
 }
 
 img.certificate {
   width: 35.5rem;
   height: auto;
-  border: 5px solid #8257e5;
 }
 
 .enlarged {
@@ -115,7 +119,7 @@ main section div {
 }
 
 @media (max-width: 700px) {
-  #rocketseat-certificates {
+  .certificate-div {
     justify-content: center;
   }
 }
