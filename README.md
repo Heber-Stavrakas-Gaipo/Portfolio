@@ -9,7 +9,7 @@
   <a href="#home">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#certificates">Certificates</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#features">Features</a>
+  <a href="#✨features">Features</a>
 </p>
 
 ## Tecnologias
@@ -122,7 +122,7 @@ Algumas mudanças foram feitas para que o resultado estivesse mais alinhado com 
 - Tema escuro
 ![Certificados_tema_escuro](./assets/prints/localhost_2023_certificates(laptop_default).png)
 
-## ✨ Features
+## ✨Features
 - Switch Theme
 - Back-to-top button
 - CSS Effects and Media Queries
