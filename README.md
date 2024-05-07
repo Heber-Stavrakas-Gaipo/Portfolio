@@ -89,7 +89,7 @@ app.listen(3000, () => {
 Algumas mudanças foram feitas para que o resultado estivesse mais alinhado com o desejado, seguindo a solicitação de que o código fosse mais genérico.
 
 <div aLign="center" style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap:2rem">
-  <a href="./server.js"><img aLign="center" alt="JavaScript" src="https://img.shields.io/badge/Aplicação do código JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /></a>
+  <a href="./routes.js"><img aLign="center" alt="JavaScript" src="https://img.shields.io/badge/Aplicação do código JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /></a>
   <a href="./views/pages/certificates/certificates.ejs"><img aLign="center" alt="NodeJS" src="https://img.shields.io/badge/Aplicação do código EJS-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" /></a>
 </div>
 
