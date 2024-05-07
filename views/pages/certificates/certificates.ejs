@@ -70,66 +70,18 @@
           </g>
         </svg>
         <div id="rocketseat-certificates" class="certificate-div">
+          <% certificates.forEach(function(certificate) {%>
           <div class="certificates" title="Abrir certificado">
             <div onclick="enlargeImage(this)">
               <img
-                src="/certificates/rocketseat/discover-conectar-certificate_page-0001.jpg"
-                alt="Certificado de conclusão Trilha Conectar"
-                id="conectar"
+                src="<%=certificate.imageUrl%>"
+                alt="<%=certificate.description%>"
+                id="<%=certificate.fileName%>"
                 class="certificate img"
               />
             </div>
           </div>
-          <div class="certificates" title="Abrir certificado">
-            <div onclick="enlargeImage(this)">
-              <img
-                src="/certificates/rocketseat/discover-fundamentar-certificate_page-0001.jpg"
-                alt="Certificado de conclusão Trilha Fundamentar"
-                id="fundamentar"
-                class="certificate img"
-              />
-            </div>
-          </div>
-          <div class="certificates" title="Abrir certificado">
-            <div onclick="enlargeImage(this)">
-              <img
-                src="/certificates/rocketseat/discover-especializar-certificate_page-0001.jpg"
-                alt="Certificado de conclusão Trilha Especializar"
-                id="especializar"
-                class="certificate img"
-              />
-            </div>
-          </div>
-          <div class="certificates" title="Abrir certificado">
-            <div onclick="enlargeImage(this)">
-              <img
-                src="/certificates/rocketseat/discover-discover-certificate_page-0001.jpg"
-                class="certificate img"
-                alt="Certificado de conclusão curso Discover"
-                id="discover"
-              />
-            </div>
-          </div>
-          <div class="certificates" title="Abrir certificado">
-            <div onclick="enlargeImage(this)">
-              <img
-                id="ia-para-devs"
-                class="certificate img"
-                src="/certificates/rocketseat/ai-for-devs-certificate_page-0001.jpg"
-                alt="Certificado de participação no evento Inteligência Artificial para Desenvolvedores"
-              />
-            </div>
-          </div>
-          <div class="certificates" title="Abrir certificado">
-            <div onclick="enlargeImage(this)">
-              <img
-                id="nlw-ai"
-                class="certificate img"
-                src="/certificates/rocketseat/nlw-ia-certificate_page-0001.jpg"
-                alt="Certificado de participação no evento Next Level Week - Artificial Intelligence"
-              />
-            </div>
-          </div>
+          <%}) %>
         </div>
       </section>
       <section id="dio-section" class="certificate-section">
