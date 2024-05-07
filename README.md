@@ -8,7 +8,8 @@
   <a href="#alura">Desafio Alura</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#home">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#certificates">Certificates</a>
+  <a href="#certificates">Certificates</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#features">Features</a>
 </p>
 
 ## Tecnologias
@@ -21,6 +22,8 @@
 
 ## Projeto
 Esse projeto nasceu com a proposta de aplicar e desenvolver meus conhecimentos em HTML e CSS, para apresentar uma página inicial que servisse como portfólio. Mas decidi reunir aqui conhecimentos mais profundos, tanto HTML e CSS, quanto JavaScript e suas ferramentas.
+
+O site conta com uma página inicial para exibir meu projetos públicos no GitHub através de requisição em API, uma seção que falo sobre mim de forma breve, porém contextual e por último, mas não menos importante, uma seção para meus certificados, que vão sendo inseridos conforme adquiridos.
 
 Esse README exibe uma apresentação estática e mais prática. O gif apresenta alguns recursos extras como efeitos em :hover, :focus, um botão de "voltar ao topo" com efeito smooth quando clicado, um theme-switcher e requisições em APIs. O site também conta com media queries.
 
@@ -118,3 +121,11 @@ Algumas mudanças foram feitas para que o resultado estivesse mais alinhado com 
 
 - Tema escuro
 ![Certificados_tema_escuro](./assets/prints/localhost_2023_certificates(laptop_default).png)
+
+## ✨ Features
+- Switch Theme
+- Back-to-top button
+- CSS Effects and Media Queries
+- API Requests
+- Local API
+- Google Gemini
