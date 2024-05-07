@@ -1,84 +1,71 @@
 const express = require("express");
-const favicon = require("serve-favicon");
 const path = require("path");
+const fs = require("fs").promises;
+const favicon = require("serve-favicon");
+const fileUpload = require("express-fileupload");
+
 const app = express();
-const url = "https://api.github.com/users/Heber-Stavrakas-Gaipo/repos";
-const dirname = `${__filename}/..`;
-app.use(express.static(dirname + "/assets"));
-app.use(favicon(path.join(dirname, "assets", "icons", "myfavicon.png")));
+const port = 2023;
+
+// set assets directory
+const assetsDir = path.join(__dirname, "assets");
+
+// set views directory (avoid repeat)
+const viewsDir = path.join(__dirname, "views");
+
+// set view engine (avoid repeat)
+app.set("views", viewsDir);
 app.set("view engine", "ejs");
-let fileUpload = require("express-fileupload");
+
+// Favicon
+app.use(favicon(path.join(assetsDir, "icons", "myfavicon.png")));
+
+// Middleware for static files
+app.use(express.static(assetsDir));
+
+// Middleware for upload files (use after static middleware)
 app.use(fileUpload());
 
-// Read certificates from directory (assuming certificates directory exists)
-const certificates = () => {
-  return [
-    {
-      fileName: "discover-conectar-certificate_page-0001.jpg",
-      imageUrl: path.join("certificates", "rocketseat", "discover-conectar-certificate_page-0001.jpg"),
-      descritpion: "Certificado de Conclusão Trilha Conectar"
-    },
-    {
-      fileName: "discover-fundamentar-certificate_page-0001.jpg",
-      imageUrl: path.join("certificates", "rocketseat", "discover-fundamentar-certificate_page-0001.jpg"),
-      descritpion: "Certificado de Conclusão Trilha Fundamentar"
-    },
-    {
-      fileName: "discover-especializar-certificate_page-0001.jpg",
-      imageUrl: path.join("certificates", "rocketseat", "discover-especializar-certificate_page-0001.jpg"),
-      descritpion: "Certificado de Conclusão Trilha Especializar"
-    },
-    {
-      fileName: "discover-discover-certificate_page-0001.jpg",
-      imageUrl: path.join("certificates", "rocketseat", "discover-discover-certificate_page-0001.jpg"),
-      descritpion: "Certificado de Conclusão Curso Discover"
-    },
-    {
-      fileName: "ai-for-devs-certificate_page-0001.jpg",
-      imageUrl: path.join("certificates", "rocketseat", "ai-for-devs-certificate_page-0001.jpg"),
-      descritpion: "Certificado de Participação no Evento AI for Devs"
-    },
-    {
-      fileName: "nlw-ia-certificate_page-0001.jpg",
-      imageUrl: path.join("certificates", "rocketseat", "nlw-ia-certificate_page-0001.jpg"),
-      descritpion: "Certificado de Participação no Evento Next Level Week - Artificial Intelligence"
-    },
-  ];
-};
+// function to search github repos (avoid repeat)
+async function getRepos() {
+  const url = "https://api.github.com/users/Heber-Stavrakas-Gaipo/repos";
+  const response = await fetch(url);
+  const data = await response.json();
+  return data.filter((repo) => repo.name !== "Heber-Stavrakas-Gaipo.md"); // Filtrar repositório indesejado
+}
 
-// API endpoint for certificates (optional, comment out if not used)
-app.get("/api/certificates", (req, res) => {
-  res.json(certificates());
-
+// principal route
+app.get("/", async (req, res) => {
+  try {
+    const projects = await getRepos();
+    projects.sort((a, b) => a.id - b.id); // Ordenar por ID
+    res.render("pages/home/index", { projects });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Erro ao buscar repositórios");
+  }
 });
 
-
-app.get("/", async function (req, res) {
-  const postsResponse = fetch(url);
-  const [posts] = await Promise.all([postsResponse]);
-  const postsJson = await posts.json();
-  // Applying logic to ignore the object "Heber-Stavrakas-Gaipo.md"
-  const filteredPosts = postsJson.filter((post) => post.name !== "Heber-Stavrakas-Gaipo");
-  const post = filteredPosts.map((post) => {
-    return { ...post };
-  });
-  post.sort((a, b) => a.id - b.id);
-  res.render("pages/home/index", { projects: post });
-});
-
-app.get("/about", function (req, res) {
+// about route
+app.get("/about", (req, res) => {
   res.render("pages/about/about");
 });
 
-app.get("/certificate", async function (req, res) {
-  const certificatesResponse = fetch("http://localhost:2023/api/certificates");
-  const [certificates] = await Promise.all([certificatesResponse]);
-  const certificatesJson = await certificates.json();
-  const certificate = certificatesJson.map((certificate) => {
-    return { ...certificate };
-  });
-  res.render("pages/certificates/certificates", { certificates: certificate });
+// certificates route
+app.get("/certificate", async (req, res) => {
+  try {
+    const certificatesPath = path.join(__dirname, "certificates.json");
+    const data = await fs.readFile(certificatesPath, "utf8");
+    const certificates = JSON.parse(data);
+    const filteredCertificates = certificates.filter((cert) => cert.id >= 1 && cert.id <= 6);
+    res.render("pages/certificates/certificates", { certificates });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Erro ao buscar certificados");
+  }
 });
 
-app.listen(2023);
-console.log("Rodando!");
+// Run server
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});

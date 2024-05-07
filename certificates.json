@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "fileName": "discover-conectar-certificate_page-0001.jpg",
+    "imageUrl": "certificates/rocketseat/discover-conectar-certificate_page-0001.jpg",
+    "description": "Certificado de Conclusão Trilha Conectar",
+    "institution": "Rocketseat"
+  },
+  {
+    "id": 2,
+    "fileName": "discover-fundamentar-certificate_page-0001.jpg",
+    "imageUrl": "certificates/rocketseat/discover-fundamentar-certificate_page-0001.jpg",
+    "description": "Certificado de Conclusão Trilha Fundamentar",
+    "institution": "Rocketseat"
+  },
+  {
+    "id": 3,
+    "fileName": "discover-especializar-certificate_page-0001.jpg",
+    "imageUrl": "certificates/rocketseat/discover-especializar-certificate_page-0001.jpg",
+    "description": "Certificado de Conclusão Trilha Especializar",
+    "institution": "Rocketseat"
+  },
+  {
+    "id": 4,
+    "fileName": "discover-discover-certificate_page-0001.jpg",
+    "imageUrl": "certificates/rocketseat/discover-discover-certificate_page-0001.jpg",
+    "description": "Certificado de Conclusão Curso Discover",
+    "institution": "Rocketseat"
+  },
+  {
+    "id": 5,
+    "fileName": "ai-for-devs-certificate_page-0001.jpg",
+    "imageUrl": "certificates/rocketseat/ai-for-devs-certificate_page-0001.jpg",
+    "description": "Certificado de Participação no Evento AI for Devs",
+    "institution": "Rocketseat"
+  },
+  {
+    "id": 6,
+    "fileName": "nlw-ia-certificate_page-0001.jpg",
+    "imageUrl": "certificates/rocketseat/nlw-ia-certificate_page-0001.jpg",
+    "description": "Certificado de Participação no Evento Next Level Week - Artificial Intelligence",
+    "institution": "Rocketseat"
+  }
+]
