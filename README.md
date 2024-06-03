@@ -13,14 +13,16 @@
 </p>
 
 ## Tecnologias
+
 - HTML
 - CSS
 - JavaScript
-    - Axios
-    - Express
-    - Node.js
+  - Axios
+  - Express
+  - Node.js
 
 ## Projeto
+
 Esse projeto nasceu com a proposta de aplicar e desenvolver meus conhecimentos em HTML e CSS, para apresentar uma página inicial que servisse como portfólio. Mas decidi reunir aqui conhecimentos mais profundos, tanto HTML e CSS, quanto JavaScript e suas ferramentas.
 
 O site conta com uma página inicial para exibir meu projetos públicos no GitHub através de requisição em API, uma seção que falo sobre mim de forma breve, porém contextual e por último, mas não menos importante, uma seção para meus certificados, que vão sendo inseridos conforme adquiridos.
@@ -28,68 +30,160 @@ O site conta com uma página inicial para exibir meu projetos públicos no GitHu
 Esse README exibe uma apresentação estática e mais prática. O gif apresenta alguns recursos extras como efeitos em :hover, :focus, um botão de "voltar ao topo" com efeito smooth quando clicado, um theme-switcher e requisições em APIs. O site também conta com media queries.
 
 ## Desafio Alura
-Estou participando da Imersão Alura - Inteligência Artificial 2ª Edição, foi apresentado o Gemini e o todas as possibilidades que ele oferece.
+
+Participei da Imersão Alura - Inteligência Artificial 2ª Edição, foi apresentado o Gemini e o todas as possibilidades que ele oferece.
 
 O primeiro desafio envolve implementar a IA Generativa Gemini ou Google AI Studio, ambos da Google, para automatizar tarefas realizadas pelos alunos, em trabalhos pessoais. Enfim, o objetivo era explorar a ferramenta para desenvolver algo.
 
-Decidi usar a IA para automatizar a exibição dos certificados (por enquanto da Rocketseat) na respectiva seção, alimentando uma API com as informações desses certificados e utilizar NodeJS com EJS para enviar essas informações para o front-end.
+Decidi usar a IA para me ajudar a automatizar a exibição dos certificados na respectiva seção, alimentando uma API com as informações desses certificados e utilizar NodeJS com EJS para enviar essas informações para o front-end.
 
-|Prompt|
---------
-|Possuo um site referente ao meu portfólio que é estruturado com NodeJS baseado em EJS. Esse site possui uma sessão onde eu insiro alguns certificados e eu gostaria de automatizar essa inserção criando uma api local no arquivo server.js que inclua os endereço de cada imagem no repositório local e a respectiva inserção da função forEach() no arquivo certificates.ejs para inserir a estrutura necessária para que intere por todos os elementos e gere como saída da função app.get() no argumento res.render do servidor. Gere uma estrutura genérica, tanto para a api, quanto para a inserção, para que eu altere de acordo com minhas especificações.|
---------
+## Prompt
 
-|Saídas|
---------
+É possível fazer uma função forEach com ejs para imprimir na tela cada uma de umas imagens dispostas em uma pasta local?
+
+## Saídas
+
+```java
+my_project/
+├── views/
+│   └── index.ejs
+├── public/
+│   └── images/
+│       ├── image1.jpg
+│       ├── image2.jpg
+│       └── image3.jpg
+├── app.js
+└── package.json
+
+```
 ```JS
 const express = require('express');
-const app = express();
 const path = require('path');
 const fs = require('fs');
 
-// Define certificates directory path
-const certificatesDir = path.join(__dirname, 'certificates');
+const app = express();
+const port = 3000;
 
-// Read certificates from directory
-const certificates = fs.readdirSync(certificatesDir).map(fileName => {
-  return {
-    fileName: fileName, // Filename of the certificate
-    imageUrl: path.join(certificatesDir, fileName) // Path to the certificate image
-  };
-});
-
-// Create API endpoint for certificates
-app.get('/api/certificates', (req, res) => {
-  res.json(certificates);
-});
-
-// Serve your EJS templates from the 'views' directory
-app.set('views', path.join(__dirname, 'views'));
-app.engine('ejs', require('ejs').render);
+// Definindo a pasta pública para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Render the 'certificates.ejs' template
+// Configurando a view engine como EJS
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-  res.render('certificates', { certificates });
+  const imagesDir = path.join(__dirname, 'public', 'images');
+  
+  // Lendo os arquivos da pasta de imagens
+  fs.readdir(imagesDir, (err, files) => {
+    if (err) {
+      return res.status(500).send('Erro ao ler o diretório de imagens.');
+    }
+
+    // Filtrando apenas arquivos de imagem (opcional)
+    const images = files.filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file));
+
+    // Renderizando a view e passando a lista de imagens
+    res.render('index', { images });
+  });
 });
 
-// Start the server
-app.listen(3000, () => {
-  console.log('Server started on port 3000');
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });
 ```
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Imagens</title>
+</head>
+<body>
+  <h1>Galeria de Imagens</h1>
+  <div>
+    <% images.forEach(image => { %>
+      <img src="/images/<%= image %>" alt="<%= image %>" style="width: 200px; height: auto;">
+    <% }); %>
+  </div>
+</body>
+</html>
 ```
-<% for (const certificate of certificates) { %>
-  <div class="certificate">
-    <img src="<%= certificate.imageUrl %>" alt="Certificate">
-    <h3><%= certificate.fileName %></h3>
-    </div>
-<% } %>
+
+## Resultado
+
+A partir do exemplo disposto pela IA, construí os códigos a seguir
+```JS
+const path = require("path");
+const fs = require("fs");
+const { getRepos } = require("./services");
+
+const CERTIFICATES_DIR = path.join(__dirname, "src", "public", "certificates");
+
+const readCertificates = (dir) => {
+  return new Promise((resolve, reject) => {
+    fs.readdir(dir, (err, files) => {
+      if (err) {
+        return reject(`Erro ao ler o diretório: ${dir}`);
+      }
+      const certificates = files.filter((file) => /\.(jpg|jpeg|png|gif)$/i.test(file));
+      resolve(certificates);
+    });
+  });
+};
+
+function routes(app) {
+
+  // Other routes before
+
+  app.get("/certificate", async (req, res) => {
+    try {
+      const rocketseatCertificates = await readCertificates(path.join(CERTIFICATES_DIR, "rocketseat"));
+      const dioCertificates = await readCertificates(path.join(CERTIFICATES_DIR, "dio"));
+
+      res.render("certificates.ejs", { rocketseatCertificates, dioCertificates });
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  });
+}
+
+module.exports = routes;
+
 ```
-Algumas mudanças foram feitas para que o resultado estivesse mais alinhado com o desejado, seguindo a solicitação de que o código fosse mais genérico.
+
+```HTML
+<% rocketseatCertificates.forEach(function(certificate) {%>
+<div class="certificates" title="Abrir certificado">
+  <div onclick="enlargeImage(this)">
+    <img
+      src="/certificates/rocketseat/<%= certificate %>"
+      alt="<%=certificate%>"
+      id="<%=certificate.split('.')[0]%>"
+      class="certificate img"
+    />
+  </div>
+</div>
+<%}) %>
+
+<!-- continuação do código -->
+
+<% dioCertificates.forEach(function(certificate) {%>
+<div class="certificates" title="Abrir certificado">
+  <div onclick="enlargeImage(this)">
+    <img
+      src="/certificates/dio/<%= certificate %>"
+      alt="<%=certificate%>"
+      id="<%=certificate.split('.')[0]%>"
+      class="certificate img"
+    />
+  </div>
+</div>
+<%}) %>
+```
 
 <div aLign="center" style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap:2rem">
-  <a href="./src/routes.js"><img aLign="center" alt="JavaScript" src="https://img.shields.io/badge/Aplicação do código JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /></a>
+  <a href="./routes.js"><img aLign="center" alt="JavaScript" src="https://img.shields.io/badge/Aplicação do código JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /></a>
   <a href="./src/views/certificates.ejs"><img aLign="center" alt="NodeJS" src="https://img.shields.io/badge/Aplicação do código EJS-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" /></a>
 </div>
 
@@ -101,28 +195,29 @@ Algumas mudanças foram feitas para que o resultado estivesse mais alinhado com 
 ## Home
 
 - Tema claro
-![Página_inicial_tema_claro](./src/public/README_prints/localhost_2023_(laptop_light).png)
+  ![Página_inicial_tema_claro](<./src/public/README_prints/localhost_2023_(laptop_light).png>)
 
 - Tema escuro
-![Página_inicial_tema_escuro](./src/public/README_prints/localhost_2023_(laptop_default).png)
+  ![Página_inicial_tema_escuro](<./src/public/README_prints/localhost_2023_(laptop_default).png>)
 
 ## About
 
 - Tema claro
-![Sobre_mim_tema_escuro](./src/public/README_prints/localhost_2023_about(laptop_light).png)
+  ![Sobre_mim_tema_escuro](<./src/public/README_prints/localhost_2023_about(laptop_light).png>)
 
 - Tema escuro
-![Sobre_mim_tema_escuro](./src/public/README_prints/localhost_2023_about(laptop_default).png)
+  ![Sobre_mim_tema_escuro](<./src/public/README_prints/localhost_2023_about(laptop_default).png>)
 
 ## Certificates
 
 - Tema claro
-![Certificados_tema_escuro](./src/public/README_prints/localhost_2023_certificates(laptop_light).png)
+  ![Certificados_tema_escuro](<./src/public/README_prints/localhost_2023_certificates(laptop_light).png>)
 
 - Tema escuro
-![Certificados_tema_escuro](./src/public/README_prints/localhost_2023_certificates(laptop_default).png)
+  ![Certificados_tema_escuro](<./src/public/README_prints/localhost_2023_certificates(laptop_default).png>)
 
 ## ✨Features
+
 - Switch Theme
 - Back-to-top button
 - CSS Effects and Media Queries
