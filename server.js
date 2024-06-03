@@ -4,8 +4,8 @@ const path = require("path");
 const app = express();
 const port = 2023;
 
-const routes = require("./routes");
-const { setupApp } = require("./middlewares");
+const routes = require("./routes.js");
+const { setupApp } = require("./middlewares.js");
 
 // Configurar o aplicativo Express
 setupApp(app, path);

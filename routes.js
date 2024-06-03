@@ -1,35 +1,47 @@
 const path = require("path");
-const fs = require("fs").promises;
+const fs = require("fs");
 const { getRepos } = require("./services");
 
+const CERTIFICATES_DIR = path.join(__dirname, "src", "public", "certificates");
+
+const readCertificates = (dir) => {
+  return new Promise((resolve, reject) => {
+    fs.readdir(dir, (err, files) => {
+      if (err) {
+        return reject(`Erro ao ler o diretório: ${dir}`);
+      }
+      const certificates = files.filter((file) => /\.(jpg|jpeg|png|gif)$/i.test(file));
+      resolve(certificates);
+    });
+  });
+};
+
 function routes(app) {
-    app.get("/", async (req, res) => {
-        try {
-            const projects = await getRepos();
-            projects.sort((a, b) => a.id - b.id);
-            res.render("pages/home/index", { projects });
-        } catch (error) {
-            console.error(error);
-            res.status(500).send("Erro ao buscar repositórios");
-        }
-    });
+  app.get("/", async (req, res) => {
+    try {
+      const projects = await getRepos();
+      projects.sort((a, b) => a.id - b.id);
+      res.render("index.ejs", { projects });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Erro ao buscar repositórios");
+    }
+  });
 
-    app.get("/about", (req, res) => {
-        res.render("pages/about/about");
-    });
+  app.get("/about", (req, res) => {
+    res.render("about.ejs");
+  });
 
-    app.get("/certificate", async (req, res) => {
-        try {
-            const certificatesPath = path.join(__dirname, "certificates.json");
-            const data = await fs.readFile(certificatesPath, "utf8");
-            const certificates = JSON.parse(data);
-            const filteredCertificates = certificates.filter((cert) => cert.id >= 1 && cert.id <= 6);
-            res.render("pages/certificates/certificates", { certificates });
-        } catch (error) {
-            console.error(error);
-            res.status(500).send("Erro ao buscar certificados");
-        }
-    });
+  app.get("/certificate", async (req, res) => {
+    try {
+      const rocketseatCertificates = await readCertificates(path.join(CERTIFICATES_DIR, "rocketseat"));
+      const dioCertificates = await readCertificates(path.join(CERTIFICATES_DIR, "dio"));
+
+      res.render("certificates.ejs", { rocketseatCertificates, dioCertificates });
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  });
 }
 
 module.exports = routes;

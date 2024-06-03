@@ -89,38 +89,38 @@ app.listen(3000, () => {
 Algumas mudanças foram feitas para que o resultado estivesse mais alinhado com o desejado, seguindo a solicitação de que o código fosse mais genérico.
 
 <div aLign="center" style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap:2rem">
-  <a href="./routes.js"><img aLign="center" alt="JavaScript" src="https://img.shields.io/badge/Aplicação do código JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /></a>
-  <a href="./views/pages/certificates/certificates.ejs"><img aLign="center" alt="NodeJS" src="https://img.shields.io/badge/Aplicação do código EJS-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" /></a>
+  <a href="./src/routes.js"><img aLign="center" alt="JavaScript" src="https://img.shields.io/badge/Aplicação do código JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /></a>
+  <a href="./src/views/certificates.ejs"><img aLign="center" alt="NodeJS" src="https://img.shields.io/badge/Aplicação do código EJS-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" /></a>
 </div>
 
 ---
 
-![page_example_part1](./assets/prints/page-example.gif)
-![page_example_part2](./assets/prints/page-examplept2.gif)
+![page_example_part1](./src/public/README_prints/page-example.gif)
+![page_example_part2](./src/public/README_prints/page-examplept2.gif)
 
 ## Home
 
 - Tema claro
-![Página_inicial_tema_claro](./assets/prints/localhost_2023_(laptop_light).png)
+![Página_inicial_tema_claro](./src/public/README_prints/localhost_2023_(laptop_light).png)
 
 - Tema escuro
-![Página_inicial_tema_escuro](./assets/prints/localhost_2023_(laptop_default).png)
+![Página_inicial_tema_escuro](./src/public/README_prints/localhost_2023_(laptop_default).png)
 
 ## About
 
 - Tema claro
-![Sobre_mim_tema_escuro](./assets/prints/localhost_2023_about(laptop_light).png)
+![Sobre_mim_tema_escuro](./src/public/README_prints/localhost_2023_about(laptop_light).png)
 
 - Tema escuro
-![Sobre_mim_tema_escuro](./assets/prints/localhost_2023_about(laptop_default).png)
+![Sobre_mim_tema_escuro](./src/public/README_prints/localhost_2023_about(laptop_default).png)
 
 ## Certificates
 
 - Tema claro
-![Certificados_tema_escuro](./assets/prints/localhost_2023_certificates(laptop_light).png)
+![Certificados_tema_escuro](./src/public/README_prints/localhost_2023_certificates(laptop_light).png)
 
 - Tema escuro
-![Certificados_tema_escuro](./assets/prints/localhost_2023_certificates(laptop_default).png)
+![Certificados_tema_escuro](./src/public/README_prints/localhost_2023_certificates(laptop_default).png)
 
 ## ✨Features
 - Switch Theme

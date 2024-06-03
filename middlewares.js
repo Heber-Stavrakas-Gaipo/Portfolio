@@ -1,23 +1,27 @@
 const express = require("express");
 const favicon = require("serve-favicon");
 const fileUpload = require("express-fileupload");
+const path = require("path");
 
-function setupApp(app, path) {
-    const assetsDir = path.join(__dirname, "assets");
-    const viewsDir = path.join(__dirname, "views");
+function setupApp(app) {
+  const assetsDir = path.join(__dirname, "src", "public"); // Atualizado para refletir a estrutura correta
+  const viewsDir = path.join(__dirname, "src", "views");
 
-    // Configurar diretório de views e engine de visualização
-    app.set("views", viewsDir);
-    app.set("view engine", "ejs");
+  // Configurar diretório de views e engine de visualização
+  app.set("views", viewsDir);
+  app.set("view engine", "ejs");
 
-    // Favicon
-    app.use(favicon(path.join(assetsDir, "icons", "myfavicon.png")));
+  // Favicon
+  app.use(favicon(path.join(assetsDir, "icons", "myfavicon.png")));
 
-    // Middleware para arquivos estáticos
-    app.use(express.static(assetsDir));
+  // Middleware para arquivos estáticos CSS
+  app.use(express.static(path.join(assetsDir, "css")));
 
-    // Middleware para upload de arquivos
-    app.use(fileUpload());
+  // Middleware para arquivos estáticos
+  app.use(express.static(assetsDir));
+
+  // Middleware para upload de arquivos
+  app.use(fileUpload());
 }
 
 module.exports = { setupApp };
