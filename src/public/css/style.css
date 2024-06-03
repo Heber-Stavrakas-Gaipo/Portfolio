@@ -408,6 +408,7 @@ div.left {
 
 .language>p {
   margin: 0;
+  text-decoration: underline;
 }
 
 .stars svg,

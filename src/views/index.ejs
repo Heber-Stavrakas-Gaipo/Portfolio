@@ -80,7 +80,7 @@
                 </div>
               </div>
               <div class="language">
-                <p class=<%=project.language%>><%=project.language%></p>
+                <p data-language=<%=project.language%>><%=project.language%></p>
               </div>
             </div>
           </section></a
@@ -88,7 +88,7 @@
         <%}) %>
     </main>
     <%- include('./partials/aside'); %> <%-
-    include('./partials/footer'); %> <%- include('./partials/script');
+    include('./partials/footer'); %> <%- include('./partials/indexScript'); %> <%- include('./partials/script');
     %>
   </body>
 </html>

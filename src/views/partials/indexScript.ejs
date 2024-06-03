@@ -1,0 +1,18 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const url = "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json";
+    fetch(url) // Altere 'languages.json' para o caminho do seu arquivo JSON
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        const languageElements = document.querySelectorAll(".language>p");
+        languageElements.forEach((element) => {
+          const language = element.dataset.language;
+          if (data[language] && data[language].color) {
+            element.style.textDecorationColor = data[language].color;
+          }
+        });
+      })
+      .catch((error) => console.error("Erro ao carregar o arquivo JSON:", error));
+  });
+</script>

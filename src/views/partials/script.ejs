@@ -2,12 +2,6 @@
   const url = "https://api.github.com/users/Heber-Stavrakas-Gaipo";
   const e = (error) => console.error(error);
 
-  const sons = document.querySelectorAll(".img");
-  sons.forEach((son) => {
-    const parent = son.parentElement;
-    parent.style.backgroundColor = "#8257e5";
-  });
-
   // function to set a given theme/color-scheme
   function setTheme(themeName) {
     localStorage.setItem("theme", themeName);
