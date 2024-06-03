@@ -43,6 +43,7 @@ Decidi usar a IA para me ajudar a automatizar a exibição dos certificados na r
 
 ## Saídas
 
+1. Estrutura do projeto:
 ```java
 my_project/
 ├── views/
@@ -54,8 +55,9 @@ my_project/
 │       └── image3.jpg
 ├── app.js
 └── package.json
-
 ```
+
+2. Código do Servidor (app.js):
 ```JS
 const express = require('express');
 const path = require('path');
@@ -91,6 +93,8 @@ app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
 ```
+
+3. Template EJS (views/index.ejs):
 ```HTML
 <!DOCTYPE html>
 <html lang="en">
