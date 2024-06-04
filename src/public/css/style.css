@@ -337,6 +337,7 @@ main section {
   position: relative;
   min-height: 18rem;
   transition: opacity 350ms linear;
+  border-bottom: 5px solid;
 }
 
 .project:hover {

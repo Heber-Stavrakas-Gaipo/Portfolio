@@ -24,7 +24,7 @@ function routes(app) {
       res.render("index.ejs", { projects });
     } catch (error) {
       console.error(error);
-      res.status(500).send("Erro ao buscar repositórios");
+      res.status(500).render("error.ejs");
     }
   });
 

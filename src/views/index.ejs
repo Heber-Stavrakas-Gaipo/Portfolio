@@ -20,7 +20,7 @@
       </section>
       <% projects.forEach(function(project) {%>
         <a class="project-link" target="_blank" href=<%=project.html_url%>
-          ><section class="project">
+          ><section class="project" data-language="<%=project.language%>">
             <div class="first-line">
               <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@
                 </div>
               </div>
               <div class="language">
-                <p data-language=<%=project.language%>><%=project.language%></p>
+                <p data-language="<%=project.language%>"><%=project.language%></p>
               </div>
             </div>
           </section></a

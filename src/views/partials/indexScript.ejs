@@ -1,15 +1,25 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const url = "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json";
-    fetch(url) // Altere 'languages.json' para o caminho do seu arquivo JSON
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        const projectsContainer = document.querySelectorAll(".project");
+        projectsContainer.forEach((project) => {
+          const language = project.dataset.language;
+          if (data[language] && data[language].color) {
+            project.style.borderColor = data[language].color;
+          } else if (data[language] === undefined) {
+            project.style.border = "unset";
+          }
+        });
         const languageElements = document.querySelectorAll(".language>p");
         languageElements.forEach((element) => {
           const language = element.dataset.language;
           if (data[language] && data[language].color) {
             element.style.textDecorationColor = data[language].color;
+          } else if (data[language] === undefined) {
+            element.style.textDecoration = "none";
           }
         });
       })
