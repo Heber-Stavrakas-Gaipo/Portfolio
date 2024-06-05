@@ -18,7 +18,10 @@
 
 ---
 
-<a href="https://youtu.be/u2FLoC7SmRU" aLign="center" style="display: flex; flex-direction: column;"><p>👆 Clique para ver o Portfólio</p><img src="./src/public/README_prints/youtube_video.jpg" alt="Portfolio thumbnail"/></a>
+<a href="https://youtu.be/u2FLoC7SmRU" aLign="center">
+  <p>👆 Clique para ver o Portfólio</p>
+  <img src="./src/public/README_prints/youtube_video.jpg" alt="Portfolio thumbnail"/>
+</a>
 
 ## Tecnologias
 
