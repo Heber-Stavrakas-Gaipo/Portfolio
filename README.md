@@ -27,7 +27,7 @@ Esse projeto nasceu com a proposta de aplicar e desenvolver meus conhecimentos e
 
 O site conta com uma página inicial para exibir meu projetos públicos no GitHub através de requisição em API, uma seção que falo sobre mim de forma breve, porém contextual e por último, mas não menos importante, uma seção para meus certificados, que vão sendo inseridos conforme adquiridos.
 
-Esse README exibe uma apresentação estática e mais prática. O gif apresenta alguns recursos extras como efeitos em :hover, :focus, um botão de "voltar ao topo" com efeito smooth quando clicado, um theme-switcher e requisições em APIs. O site também conta com media queries.
+Esse README exibe uma apresentação estática e mais prática. O gif apresenta alguns recursos extras como efeitos em ```CSS :hover ```, ```CSS :focus ```, um botão de "voltar ao topo" com efeito smooth quando clicado, um theme-switcher e requisições em APIs. O site também conta com media queries.
 
 ## Desafio Alura
 
@@ -138,7 +138,7 @@ const readCertificates = (dir) => {
 
 function routes(app) {
 
-  // Other routes before
+  // Main page and About page routes before
 
   app.get("/certificate", async (req, res) => {
     try {
@@ -170,7 +170,7 @@ module.exports = routes;
 </div>
 <%}) %>
 
-<!-- continuação do código -->
+<!-- Code continue -->
 
 <% dioCertificates.forEach(function(certificate) {%>
 <div class="certificates" title="Abrir certificado">
@@ -226,5 +226,4 @@ module.exports = routes;
 - Back-to-top button
 - CSS Effects and Media Queries
 - API Requests
-- Local API
 - Google Gemini
