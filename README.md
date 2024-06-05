@@ -1,5 +1,9 @@
 <h1 align="center">Portfolio</h1>
 
+<img aLign="center" src="./src/public/README_prints/portfolio_wallpaper.jpg" />
+
+---
+
 <p align="center">Projeto destinado a concentrar e apresentar meus conhecimentos de programação, voltados ao desenvolvimento WEB.</p>
 
 <p align="center">
@@ -198,27 +202,33 @@ module.exports = routes;
 
 ## Home
 
-- Tema claro
-  ![Página_inicial_tema_claro](<./src/public/README_prints/localhost_2023_(laptop_light).png>)
+<h3 style="text-decoration: underline;">Tema claro</h3>
 
-- Tema escuro
-  ![Página_inicial_tema_escuro](<./src/public/README_prints/localhost_2023_(laptop_default).png>)
+![Página_inicial_tema_claro](<./src/public/README_prints/localhost_2023_(laptop_light).png>)
+
+<h3 style="text-decoration: underline;">Tema escuro</h3>
+
+![Página_inicial_tema_escuro](<./src/public/README_prints/localhost_2023_(laptop_default).png>)
 
 ## About
 
-- Tema claro
-  ![Sobre_mim_tema_escuro](<./src/public/README_prints/localhost_2023_about(laptop_light).png>)
+<h3 style="text-decoration: underline;">Tema claro</h3>
 
-- Tema escuro
-  ![Sobre_mim_tema_escuro](<./src/public/README_prints/localhost_2023_about(laptop_default).png>)
+![Sobre_mim_tema_escuro](<./src/public/README_prints/localhost_2023_about(laptop_light).png>)
+
+<h3 style="text-decoration: underline;">Tema escuro</h3>
+
+![Sobre_mim_tema_escuro](<./src/public/README_prints/localhost_2023_about(laptop_default).png>)
 
 ## Certificates
 
-- Tema claro
-  ![Certificados_tema_escuro](<./src/public/README_prints/localhost_2023_certificates(laptop_light).png>)
+<h3 style="text-decoration: underline;">Tema claro</h3>
 
-- Tema escuro
-  ![Certificados_tema_escuro](<./src/public/README_prints/localhost_2023_certificates(laptop_default).png>)
+![Certificados_tema_escuro](<./src/public/README_prints/localhost_2023_certificates(laptop_light).png>)
+
+<h3 style="text-decoration: underline;">Tema escuro</h3>
+
+![Certificados_tema_escuro](<./src/public/README_prints/localhost_2023_certificates(laptop_default).png>)
 
 ## ✨Features
 
