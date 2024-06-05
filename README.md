@@ -204,9 +204,6 @@ module.exports = routes;
 
 ---
 
-![page_example_part1](./src/public/README_prints/page-example.gif)
-![page_example_part2](./src/public/README_prints/page-examplept2.gif)
-
 ## Home
 
 <h3 style="text-decoration: underline;">Tema claro</h3>
