@@ -10,9 +10,9 @@
   <a href="#tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#desafio-alura">Desafio Alura</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#home">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#certificates">Certificates</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#home">Página Inicial</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#about">Sobre mim</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#certificates">Certificados</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#features">Features</a>
 </p>
 
@@ -23,7 +23,7 @@
   <img src="./src/public/README_prints/youtube_video.jpg" alt="Portfolio thumbnail"/>
 </a>
 
-## Tecnologias
+<h2 id="tecnologias">Tecnologias</h2>
 
 - HTML
 - CSS
@@ -32,15 +32,15 @@
   - Express
   - Node.js
 
-## Projeto
+<h2 id="projeto">Projeto</h2>
 
 Esse projeto nasceu com a proposta de aplicar e desenvolver meus conhecimentos em HTML e CSS, para apresentar uma página inicial que servisse como portfólio. Mas decidi reunir aqui conhecimentos mais profundos, tanto HTML e CSS, quanto JavaScript e suas ferramentas.
 
 O site conta com uma página inicial para exibir meu projetos públicos no GitHub através de requisição em API, uma seção que falo sobre mim de forma breve, porém contextual e por último, mas não menos importante, uma seção para meus certificados, que vão sendo inseridos conforme adquiridos.
 
-Esse README exibe uma apresentação estática e mais prática. O gif apresenta alguns recursos extras como efeitos em ```:hover```, ```:focus```, um botão de "voltar ao topo" com efeito smooth quando clicado, um theme-switcher e requisições em APIs. O site também conta com media queries.
+Esse README exibe uma apresentação estática e mais prática. O vídeo no início do documento apresenta alguns recursos extras como efeitos em ```:hover```, ```:focus```, um botão de "voltar ao topo" com efeito smooth quando clicado, um theme-switcher e requisições em APIs. O site também conta com media queries.
 
-## Desafio Alura
+<h2 id="desafio-alura">Desafio Alura</h2>
 
 Participei da Imersão Alura - Inteligência Artificial 2ª Edição, foi apresentado o Gemini e o todas as possibilidades que ele oferece.
 
@@ -204,7 +204,7 @@ module.exports = routes;
 
 ---
 
-## Home
+<h2 id="home">Página Inicial</h2>
 
 <h3 style="text-decoration: underline;">Tema claro</h3>
 
@@ -214,7 +214,7 @@ module.exports = routes;
 
 ![Página_inicial_tema_escuro](<./src/public/README_prints/localhost_2023_(laptop_default).png>)
 
-## About
+<h2 id="about">Sobre mim</h2>
 
 <h3 style="text-decoration: underline;">Tema claro</h3>
 
@@ -224,7 +224,7 @@ module.exports = routes;
 
 ![Sobre_mim_tema_escuro](<./src/public/README_prints/localhost_2023_about(laptop_default).png>)
 
-## Certificates
+<h2 id="certificates">Certificados</h2>
 
 <h3 style="text-decoration: underline;">Tema claro</h3>
 
@@ -234,7 +234,7 @@ module.exports = routes;
 
 ![Certificados_tema_escuro](<./src/public/README_prints/localhost_2023_certificates(laptop_default).png>)
 
-## ✨Features
+<h2 id="features">✨Features</h2>
 
 - Switch Theme
 - Back-to-top button
