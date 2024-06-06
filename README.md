@@ -46,7 +46,7 @@ Participei da Imersão Alura - Inteligência Artificial 2ª Edição, foi aprese
 
 O primeiro desafio envolve implementar a IA Generativa Gemini ou Google AI Studio, ambos da Google, para automatizar tarefas realizadas pelos alunos, em trabalhos pessoais. Enfim, o objetivo era explorar a ferramenta para desenvolver algo.
 
-Decidi usar a IA para me ajudar a automatizar a exibição dos certificados na respectiva seção, alimentando uma API com as informações desses certificados e utilizar NodeJS com EJS para enviar essas informações para o front-end.
+Decidi usar a IA para me ajudar a automatizar a exibição dos certificados na respectiva seção, buscando as informações desses certificados dentro das pastar e utilizar NodeJS com EJS na função ```forEach()``` para enviar essas informações para o front-end, seguindo o mesmo princípio desenvolvido por mim na Página Inicial, mas dessa vez sem a necessidade de uma API externa.
 
 ## Prompt
 
