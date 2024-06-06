@@ -36,8 +36,9 @@ function routes(app) {
     try {
       const rocketseatCertificates = await readCertificates(path.join(CERTIFICATES_DIR, "rocketseat"));
       const dioCertificates = await readCertificates(path.join(CERTIFICATES_DIR, "dio"));
+      const aluraCertificates = await readCertificates(path.join(CERTIFICATES_DIR, "alura"));
 
-      res.render("certificates.ejs", { rocketseatCertificates, dioCertificates });
+      res.render("certificates.ejs", { rocketseatCertificates, dioCertificates, aluraCertificates });
     } catch (error) {
       res.status(500).send(error);
     }
