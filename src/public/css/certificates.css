@@ -55,6 +55,10 @@ main hr {
   border: 5px solid #8257e5;
 }
 
+#alura-certificates .certificates img.certificate {
+  border: 5px solid #7473fa;
+}
+
 #dio-section:hover #dio-section-logo {
   padding-left: 1rem;
   border-left: .8rem solid #3cafe2;
